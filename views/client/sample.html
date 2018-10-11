@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <% include ./common/header.html %>
+    <link rel="stylesheet" href="/public/client/css/main/main.css">
+    <link rel="stylesheet" href="/public/client/css/main/main-mobile.css">
+  </head>
+  <body>
+    <% include ./common/navbar.html %>
+    <div class="search-section" style="background-image: url('../public/client/images/us-background.png');">
+      <div class="search-section-wrapper">
+        <div class="desc">
+          나만의 집을 검색해보세요<br/>
+          어스하우스가 최고의 서비스를 제공합니다.
+        </div>
+        <div class="main-search">
+          <input type="text" id="main" name="main" value="" placeholder="검색어를 입력하세요">
+        </div>
+        <div class="condition-search">
+          <select class="select-control" id="type">
+              <option value="">타입</option>
+              <option value="원룸형">원룸형</option>
+              <option value="분리형원룸">분리형 원룸형</option>
+              <option value="투룸형">투룸형</option>
+              <option value="쓰리룸형">쓰리룸형</option>
+          </select>
+
+          <select class="select-control" id="location">
+
+              <option value="">위치</option>
+              <option value="37.492010, 127.007731">서초역</option>
+              <option value="37.4930954,127.0128486">교대역</option>
+              <option value="37.4979462,127.0254323">강남역</option>
+              <option value="37.50081,127.0347473">역삼역</option>
+              <option value="37.5044832,127.0467523">선릉역</option>
+              <option value="37.511206,127.0195393">논현역</option>
+              <option value="37.4841062,127.0321803">양재역</option>
+              <option value="37.5137711,127.022905">논현동</option>
+              <option value="37.5012283,127.0334121">역삼동</option>
+              <option value="37.4884602,127.0350241">도곡동</option>
+              <option value="37.4887199,126.9993888">서초동</option>
+
+          </select>
+
+          <select class="select-control" id="price">
+            <option value="">가격</option>
+            <option value="150max">100만 ~ 150만</option>
+            <option value="200max">150만 ~ 200만</option>
+
+          </select>
+
+          <!-- <select style="margin-right: 0" class="select-control" id="date">
+            <option value="">날짜</option>
+            <option value="-">-</option>
+          </select> -->
+
+          <input style="margin-right: 0"  type="text" class="select-control" id="date" placeholder="날짜">
+        </div>
+        <div class="search-button" onclick="search()">
+          <span>검색</span>&nbsp;<img src="public/client/images/icons/us-search.png">
+        </div>
+      </div>
+    </div>
+    <div class="link-section">
+      <div class="wrapper"><span>&nbsp;&nbsp;테마검색</span></div>
+    </div>
+    <div class="around-section">
+      <div class="around-wrapper">
+        <i class="prev"></i>
+        <div class="around">
+          <div class="list" onclick="location.href='/categoryList?category=now&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 84"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}</style></defs><title>us_calender</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M29.59,63.46,15.07,49.16a1.66,1.66,0,0,1,0-2.38h0l3-3a1.73,1.73,0,0,1,2.41,0h0l9.07,8.95a1.73,1.73,0,0,0,2.41,0h0L53.49,31.58a1.73,1.73,0,0,1,2.41,0h0l3,3a1.66,1.66,0,0,1,0,2.38h0L32,63.46A1.73,1.73,0,0,1,29.59,63.46Z"/><rect class="cls-1" x="2" y="13.03" width="70" height="68.97" rx="2.54" ry="2.54"/><path d="M13.09,0h6.84a.85.85,0,0,1,.85.85V12.62a0,0,0,0,1,0,0H12.24a0,0,0,0,1,0,0V.85A.85.85,0,0,1,13.09,0Z"/><path d="M54.07,0h6.84a.85.85,0,0,1,.85.85V12.62a0,0,0,0,1,0,0H53.22a0,0,0,0,1,0,0V.85A.85.85,0,0,1,54.07,0Z"/></g></g></svg>
+              </div>
+              <div class='desc'>바로 이용 가능한 집</div>
+            </div>
+          </div>
+          <div class="list" onclick="location.href='/categoryList?category=transport&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}</style></defs><title>us_subway</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M48.08,68.22h7.35l4.22,3.89a1.6,1.6,0,0,1,0,2.4,1.92,1.92,0,0,1-1.29.49H56.19a1.92,1.92,0,0,1-1.29-.5Z"/><path d="M60,68.22H26a5.31,5.31,0,0,1-5.51-5.08V30.08A5.31,5.31,0,0,1,26,25H60a5.31,5.31,0,0,1,5.51,5.08V63.14A5.31,5.31,0,0,1,60,68.22Zm0-19.49V34.32a2.66,2.66,0,0,0-2.76-2.54H28.77A2.66,2.66,0,0,0,26,34.32V48.73a2.66,2.66,0,0,0,2.76,2.54H57.23A2.66,2.66,0,0,0,60,48.75v0Zm-26.63,11a3.69,3.69,0,1,0-3.67,3.39,3.54,3.54,0,0,0,3.67-3.39v0Zm26.63,0a3.69,3.69,0,1,0-3.67,3.39A3.54,3.54,0,0,0,60,59.75v0Z"/><path d="M38,68.22H30.63l-4.22,3.89a1.6,1.6,0,0,0,0,2.4,1.92,1.92,0,0,0,1.29.49h2.15a1.92,1.92,0,0,0,1.29-.5Z"/><path class="cls-1" d="M43,2h0A41,41,0,0,1,84,43V81a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V43A41,41,0,0,1,43,2Z"/></g></g></svg>
+              </div>
+              <div class='desc'>대중교통이 편리한 집</div>
+            </div>
+          </div>
+          <div class="list" onclick="location.href='/categoryList?category=convenience&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.43 76"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>us_localshop</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="84.22 42.54 2.22 42.54 5.66 8.99 80.77 8.99 84.22 42.54"/><line class="cls-1" x1="6.35" y1="2" x2="80.08" y2="2"/><rect class="cls-1" x="9.11" y="42.54" width="39.28" height="31.46"/><line class="cls-1" x1="77.33" y1="42.54" x2="77.33" y2="74"/></g></g></svg>              </div>
+              <div class='desc'>주변 편의시설이 많은 집</div>
+            </div>
+          </div>
+          <div class="list" onclick="location.href='/categoryList?category=now&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 84"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}</style></defs><title>us_calender</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M29.59,63.46,15.07,49.16a1.66,1.66,0,0,1,0-2.38h0l3-3a1.73,1.73,0,0,1,2.41,0h0l9.07,8.95a1.73,1.73,0,0,0,2.41,0h0L53.49,31.58a1.73,1.73,0,0,1,2.41,0h0l3,3a1.66,1.66,0,0,1,0,2.38h0L32,63.46A1.73,1.73,0,0,1,29.59,63.46Z"/><rect class="cls-1" x="2" y="13.03" width="70" height="68.97" rx="2.54" ry="2.54"/><path d="M13.09,0h6.84a.85.85,0,0,1,.85.85V12.62a0,0,0,0,1,0,0H12.24a0,0,0,0,1,0,0V.85A.85.85,0,0,1,13.09,0Z"/><path d="M54.07,0h6.84a.85.85,0,0,1,.85.85V12.62a0,0,0,0,1,0,0H53.22a0,0,0,0,1,0,0V.85A.85.85,0,0,1,54.07,0Z"/></g></g></svg>
+              </div>
+              <div class='desc'>바로 이용 가능한 집</div>
+            </div>
+          </div>
+          <div class="list" onclick="location.href='/categoryList?category=transport&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}</style></defs><title>us_subway</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M48.08,68.22h7.35l4.22,3.89a1.6,1.6,0,0,1,0,2.4,1.92,1.92,0,0,1-1.29.49H56.19a1.92,1.92,0,0,1-1.29-.5Z"/><path d="M60,68.22H26a5.31,5.31,0,0,1-5.51-5.08V30.08A5.31,5.31,0,0,1,26,25H60a5.31,5.31,0,0,1,5.51,5.08V63.14A5.31,5.31,0,0,1,60,68.22Zm0-19.49V34.32a2.66,2.66,0,0,0-2.76-2.54H28.77A2.66,2.66,0,0,0,26,34.32V48.73a2.66,2.66,0,0,0,2.76,2.54H57.23A2.66,2.66,0,0,0,60,48.75v0Zm-26.63,11a3.69,3.69,0,1,0-3.67,3.39,3.54,3.54,0,0,0,3.67-3.39v0Zm26.63,0a3.69,3.69,0,1,0-3.67,3.39A3.54,3.54,0,0,0,60,59.75v0Z"/><path d="M38,68.22H30.63l-4.22,3.89a1.6,1.6,0,0,0,0,2.4,1.92,1.92,0,0,0,1.29.49h2.15a1.92,1.92,0,0,0,1.29-.5Z"/><path class="cls-1" d="M43,2h0A41,41,0,0,1,84,43V81a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V43A41,41,0,0,1,43,2Z"/></g></g></svg>
+              </div>
+              <div class='desc'>대중교통이 편리한 집</div>
+            </div>
+          </div>
+          <div class="list" onclick="location.href='/categoryList?category=convenience&location='">
+            <div class='list-wrapper'>
+              <div class='icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.43 76"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>us_localshop</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="84.22 42.54 2.22 42.54 5.66 8.99 80.77 8.99 84.22 42.54"/><line class="cls-1" x1="6.35" y1="2" x2="80.08" y2="2"/><rect class="cls-1" x="9.11" y="42.54" width="39.28" height="31.46"/><line class="cls-1" x1="77.33" y1="42.54" x2="77.33" y2="74"/></g></g></svg>              </div>
+              <div class='desc'>주변 편의시설이 많은 집</div>
+            </div>
+          </div>
+        </div>
+        <i class="next"></i>
+      </div>
+    </div>
+
+    <div class="link-section">
+      <div class="wrapper"><span>&nbsp;&nbsp;주변리뷰</span></div>
+    </div>
+
+    <div class="review-section">
+      <div class="picture-wrapper">
+        <i class="prev"></i>
+        <div class="picture">
+          <div class="list" style="background-image: url('public/client/images/sample/img-1.png')">
+            <div class="description">
+              <span class="description-header">주변 리뷰 </span>
+              <br>
+              <span class="description-body">여유로운 시간을 보낼 수 있는 역삼동 브런치 카페</span>
+            </div>
+          </div>
+          <div class="list" style="background-image: url('public/client/images/sample/img-1.png')">
+            <div class="description">
+              <span class="description-header">주변 리뷰 </span>
+              <br>
+              <span class="description-body">여유로운 시간을 보낼 수 있는 역삼동 브런치 카페</span>
+            </div>
+          </div>
+        </div>
+        <i class="next"></i>
+      </div>
+    </div>
+    <!-- <div class="call-section">
+      <div class="icon"><i class="fas fa-phone"></i></div>
+      <div class="number">1544-9616</div>
+    </div> -->
+
+    <% include ./common/footer.html %>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('.picture').slick({
+        autoplay: true,
+        arrows: false,
+
+      });
+
+      $('.around').slick({
+        autoplay: false,
+        arrows: false,
+        slidesToShow: 3,
+        swipeToSlide: true,
+        touchMove: false,
+        responsive: [
+          {
+            breakpoint: 690,
+            settings: {
+              slidesToShow: 2,
+            }
+          }
+        ]
+      });
+
+      $(".picture-wrapper .prev").click( function(e) {
+        $('.picture').slick("slickPrev");
+      });
+
+      $(".picture-wrapper .next").click( function(e) {
+        $('.picture').slick("slickNext");
+      });
+
+      $(".around-wrapper .prev").click( function(e) {
+        $('.around').slick("slickPrev");
+      });
+
+      $(".around-wrapper .next").click( function(e) {
+        $('.around').slick("slickNext");
+      });
+
+      //select selectpicker
+      $(".select-control").selectpicker(
+        {
+          style: 'us-dropdown-btn',
+        }
+      );
+
+      $('#date').datepicker({
+          inline: true,
+          showOtherMonths: true,
+          showMonthAfterYear: true,
+          monthNames: [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월' ],
+          dayNamesMin: ['일', '월', '화', '수', '목', '금', '토']
+      });
+
+    })
+
+    function search(){
+      var main = $("#main").val();
+      var type = $("#type option:selected").val();
+      var price = $("#price option:selected").val();
+      var loca = $("#location option:selected").val();
+
+      console.log(main,type,price,loca)
+
+      if(main == '' && type == '' && price =='' && loca == ''){
+        // alert("검색어 또는 필터를 하나 이상 설정 해주세요");
+        location.href = '/list?main='+main+'&type='+type+'&price='+price+'&location='+loca;
+      }else{
+        location.href = '/list?main='+main+'&type='+type+'&price='+price+'&location='+loca;
+      }
+
+    }
+  </script>
+</html>
