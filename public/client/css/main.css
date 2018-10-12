@@ -84,6 +84,74 @@ html {
   /* margin: auto; */
 }
 
+.search-bar-list .search-bar-item {
+  color: #ffffff;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  display: flex;
+}
+
+.search-bar-list .item-wrapper {
+  /* flex-direction: column; */
+  width: 200px;
+  text-align: center;
+  display: flex;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.search-bar-list .item-wrapper .item-container {
+  display: flex;
+  margin: 0 auto;
+  flex: 1;
+  align-items: center;
+}
+
+.search-bar-list .item-wrapper .item-header{
+  font-size: 0.75rem;
+  color: #cecbcb;
+  flex: 2;
+}
+
+.search-bar-list .item-wrapper .item-header .header-wrapper{
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  flex-direction: column;
+}
+
+.search-bar-list  .item-wrapper .item-body{
+  flex: 1;
+  /* margin: auto; */
+}
+
+.search-bar-list  .item-wrapper .item-body .body-wrapper{
+  margin:0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-bar-list  .item-wrapper .item-title {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.search-bar-list  .item-wrapper .item-image {
+  cursor: pointer;
+}
+
+.search-bar-list  .item-wrapper .item-content {
+  color: white;
+  margin: auto;
+  margin-top: 0;
+}
+
+
 .a {
   flex-direction: column;
   width: 200px;
@@ -100,81 +168,4 @@ html {
 .c {
   color: white;
   margin: auto;
-}
-.item-header {
-  color: white;
-  flex: 1;
-  margin: auto;
-  display: flex;
-}
-
-.search-bar-list .search-bar-item {
-  color: #ffffff;
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
-  position: relative;
-  height: 100%;
-  text-align: center;
-  display: flex;
-}
-
-
-.search-bar-btn {
-  /* vertical-align: middle;
-  margin-left: 5px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 40%; */
-  margin: auto;
-  cursor: pointer;
-  /* height: 15px; */
-}
-
-
-.search-bar-item.room {
-  width: 140px;
-}
-
-.search-bar-item.number {
-  width: 180px;
-  padding: 0 20px;
-}
-
-.search-bar-item.date {
-
-}
-
-.search-bar-item.hotel {
-
-}
-
-.search-bar-item.arrow-down {
-  height: 10px;
-}
-
-.search-bar-list .search-bar-item .search-bar-item-container {
-  display: inline-block;
-  margin: auto;
-  flex: 1;
-}
-
-.search-bar-list .search-bar-item .item-header {
-  display: block;
-  font-size: 0.8rem;
-  color: gray;
-  text-align: center;
-}
-
-.search-bar-list .search-bar-item .item-name {
-  display: block;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.search-bar-list .search-bar-item .item-date {
-  display: block;
-  font-size: 0.8rem;
-  text-align: center;
-  color: white;
 }
