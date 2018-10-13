@@ -114,6 +114,7 @@ html {
   text-align: center;
   margin-top: 5px;
   display: none;
+  z-index: 10;
 }
 
 .hotel-select span {
@@ -180,7 +181,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .main1_image {
-  padding-bottom: 700px;
+  /* padding-bottom: 700px; */
   background-image: url('../images/main_sample1.jpg');
   background-position: center 0%;
   background-repeat: no-repeat;
@@ -189,17 +190,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main1_desc_wrapper {
   width: 100%;
-  height: 100%;
-  position: absolute;
   display: flex;
+  height: 700px;
 }
 
 .main1_header {
-  width: 450px;
-  /* height: 300px; */
+  width: 1080px;
   margin: auto;
-  margin-top: 200px;
-  margin-left: 350px;
+  margin-top: 150px;
+  padding-left: 100px;
 }
 
 .main1_header span {
@@ -234,6 +233,18 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+.main1-event-btn {
+  position: absolute; */
+  /* bottom: 35%; */
+  width: 50px;
+  padding: 3px 40px;
+  background: black;
+  color: white;
+  margin-top: 70px;
+  /* left: 350px; */
+  cursor: pointer;
+}
+
 .main2 {
   width: 1080px;
   margin: auto;
@@ -242,6 +253,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main2 .region-image {
   flex: 1;
+  margin: 1px;
   padding-bottom: 80px;
   background-position: center 0%;
   background-repeat: no-repeat;
