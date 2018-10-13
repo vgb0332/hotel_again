@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="../../public/client/vendor/jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="../../public/client/css/main.css">
+
+    <link rel="stylesheet" href="../../public/client/vendor/slick/slick.css">
+    <script src="../../public/client/vendor/slick/slick.min.js"></script>
     <title> 더블유 디자인 호텔 MAIN </title>
   </head>
   <body>
@@ -54,9 +57,9 @@
               <span> 인원수 </span>
             </div>
             <div class='content'>
-              <img src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
-              <input class="input-search" type="number" name="" value="1"></input>
-              <img src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
             </div>
           </div>
 
@@ -72,15 +75,46 @@
           </div>
 
           <!-- 호텔 선택 -->
-          <div class='section hotel'>
+          <div class='section hotel' style="border-left: 1px solid white;">
             <div class='title'>
               <span> HOTEL BRAND </span>
             </div>
             <div class='content'>
-              <span style="display:inline-block;width:130px;margin-left:20px;height:30px;"> 호텔 선택호텔 선택호텔 선택호텔 선택 </span>
-              <img src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              <div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                호텔 선택
+              </div>
+              <img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+            </div>
+            <div id="hotel_list" class="hotel-select" style="width:220px;">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
             </div>
           </div>
+
+          <script type="text/javascript">
+            $("#count_down").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              if(cur_val <= 1) return false;
+              $("#count_val").val( cur_val - 1 );
+            });
+
+            $("#count_up").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              $("#count_val").val( cur_val + 1 );
+            });
+
+            $("#select_hotel").click( (e) => {
+              $("#hotel_list").toggle();
+            });
+
+            $("#hotel_list span").click( (e) => {
+              console.log($(e.target).text());
+              $("#target_hotel").text($(e.target).text());
+            });
+
+          </script>
 
         </div>
       </div>
@@ -88,6 +122,225 @@
 
     <!--  -->
 
+
+    <div id="main1" class="main1">
+      <div class="main1_image">
+
+        <div class="main1_desc_wrapper">
+          <div class="main1_header">
+            <span class="title">[광안 하운드 호텔]</span>
+            <span class="sub-title">불꽃축제 패키지 OPEN </span>
+            <span class="desc">
+              1년에 단 한번뿐인 광안리의 가장 아름다운 밤<br> [광안하운드호텔]의
+              오션뷰 그리고 광안대교 전경의 루프탑에서
+            </span>
+          </div>
+          <span id="event_btn" class="event-btn"> EVENT </span>
+        </div>
+
+      </div>
+
+      <div class="main1_image">
+
+        <div class="main1_desc_wrapper">
+          <div class="main1_header">
+            <span class="title">[광안 하운드 호텔]</span>
+            <span class="sub-title">불꽃축제 패키지 OPEN </span>
+            <span class="desc">
+              1년에 단 한번뿐인 광안리의 가장 아름다운 밤<br> [광안하운드호텔]의
+              오션뷰 그리고 광안대교 전경의 루프탑에서
+            </span>
+          </div>
+          <span id="event_btn" class="event-btn"> EVENT </span>
+        </div>
+
+      </div>
+
+      <div class="main1_image">
+
+        <div class="main1_desc_wrapper">
+          <div class="main1_header">
+            <span class="title">[광안 하운드 호텔]</span>
+            <span class="sub-title">불꽃축제 패키지 OPEN </span>
+            <span class="desc">
+              1년에 단 한번뿐인 광안리의 가장 아름다운 밤<br> [광안하운드호텔]의
+              오션뷰 그리고 광안대교 전경의 루프탑에서
+            </span>
+          </div>
+          <span id="event_btn" class="event-btn"> EVENT </span>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $('#main1').slick({arrows: false});
+    </script>
+
+
+    <div id="main2" class="main2">
+      <div class="region-image" style="background-image:url('../../public/client/images/01_main/main_buk.png')">
+      </div>
+      <div class="region-image" style="background-image:url('../../public/client/images/01_main/main_buk.png')">
+      </div>
+      <div class="region-image" style="background-image:url('../../public/client/images/01_main/main_buk.png')">
+      </div>
+      <div class="region-image" style="background-image:url('../../public/client/images/01_main/main_buk.png')">
+      </div>
+    </div>
+
+    <div id="main3" class="main3">
+      <div class="event-info">
+        <div class="event-wrapper">
+          <div class="event-body">
+              <span class="main3-event-btn"> EVENT </span>
+              <span class="main3-event-title"> 신규 가입 시 <br> 3000 pt </span>
+              <p class="main3-event-desc">
+                홈페이지 신규 가입을 하시면 즉시
+                사용할 수 있는 3000pt를 적립 해 드립니다.
+              </p>
+
+              <span class="main3-event-more"> 자세히 보기 > </span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="event-info">
+        <div class="event-wrapper">
+          <div class="event-body">
+              <span class="main3-event-btn"> EVENT </span>
+              <span class="main3-event-title"> 신규 가입 시 <br> 3000 pt </span>
+              <p class="main3-event-desc">
+                홈페이지 신규 가입을 하시면 즉시
+                사용할 수 있는 3000pt를 적립 해 드립니다.
+              </p>
+
+              <span class="main3-event-more"> 자세히 보기 > </span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="event-video">
+        <iframe width="100%" height="100%"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+      </div>
+    </div>
+
+    <div id="main4" class="main4">
+      <div class="middle-logo">
+        <img style="width: 100%" src="../../public/client/images/01_main/main_middle_w.png" alt="">
+      </div>
+
+      <div class="middle-sub-logo">
+        <img style="display: block; margin: auto;" src="../../public/client/images/01_main/main_middle_logo.png" alt="">
+      </div>
+
+      <div class="main4-desc">
+        <p>
+           진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과
+           진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과
+           진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과진정한 휴식과
+        </p>
+      </div>
+    </div>
+
+    <div id="main5" class="main5">
+      <div class="main5-header">
+        <span class="main5-btn">호텔찾기</span>
+      </div>
+      <iframe width="100%" height="500px"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+      </iframe>
+      <!-- <iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBw5vj4ZnOZUe-EH2A9_Nk9tP0a9-f9PBk
+          &q=Space+Needle,Seattle+WA" allowfullscreen>
+      </iframe> -->
+    </div>
+
+    <div class="main6">
+      <div class="main5-header">
+        <span class="main5-btn">최근 본 호텔</span>
+      </div>
+      <div class="main5-body">
+        <div class="main5-list">
+          <div class="main5-list-image" style="background-image:url('../../public/client/images/main_sample1.jpg')">
+            <img style="margin:auto; cursor:pointer;" src="../../public/client/images/01_main/main_middle_icon_view.png" alt="">
+          </div>
+
+          <div class="main5-list-wrapper">
+            <div class="main5-list-title">
+              넘버 25 해둔대점
+            </div>
+            <div class="main5-list-address">
+              <img style="vertical-align: bottom;" src="../../public/client/images/01_main/main_middle_pin.png" alt="">
+              부산 해운대구 우동 637-7
+            </div>
+          </div>
+
+          <img style="margin-left:10px;" src="../../public/client/images/01_main/main_middle_again.png" alt="">
+        </div>
+
+        <div class="main5-list">
+          <div class="main5-list-image" style="background-image:url('../../public/client/images/main_sample1.jpg')">
+            <img style="margin:auto; cursor:pointer;" src="../../public/client/images/01_main/main_middle_icon_view.png" alt="">
+          </div>
+
+          <div class="main5-list-wrapper">
+            <div class="main5-list-title">
+              넘버 25 해둔대점
+            </div>
+            <div class="main5-list-address">
+              <img style="vertical-align: bottom;" src="../../public/client/images/01_main/main_middle_pin.png" alt="">
+              부산 해운대구 우동 637-7
+            </div>
+          </div>
+
+          <img style="margin-left:10px;" src="../../public/client/images/01_main/main_middle_again.png" alt="">
+        </div>
+
+        <div class="main5-list">
+          <div class="main5-list-image" style="background-image:url('../../public/client/images/main_sample1.jpg')">
+            <img style="margin:auto; cursor:pointer;" src="../../public/client/images/01_main/main_middle_icon_view.png" alt="">
+          </div>
+
+          <div class="main5-list-wrapper">
+            <div class="main5-list-title">
+              넘버 25 해둔대점
+            </div>
+            <div class="main5-list-address">
+              <img style="vertical-align: bottom;" src="../../public/client/images/01_main/main_middle_pin.png" alt="">
+              부산 해운대구 우동 637-7
+            </div>
+          </div>
+
+          <img style="margin-left:10px;" src="../../public/client/images/01_main/main_middle_again.png" alt="">
+        </div>
+
+        <div class="main5-list">
+          <div class="main5-list-image" style="background-image:url('../../public/client/images/main_sample1.jpg')">
+            <img style="margin:auto; cursor:pointer;" src="../../public/client/images/01_main/main_middle_icon_view.png" alt="">
+          </div>
+
+          <div class="main5-list-wrapper">
+            <div class="main5-list-title">
+              넘버 25 해둔대점
+            </div>
+            <div class="main5-list-address">
+              <img style="vertical-align: bottom;" src="../../public/client/images/01_main/main_middle_pin.png" alt="">
+              부산 해운대구 우동 637-7
+            </div>
+          </div>
+
+          <img style="margin-left:10px;" src="../../public/client/images/01_main/main_middle_again.png" alt="">
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
