@@ -347,7 +347,7 @@ input[type=number]::-webkit-outer-spin-button {
    padding-bottom: 40px;
 }
 
-.main5, .main6 {
+.main5, .main6, .main7 {
   width: 1080px;
   margin: auto;
   margin-bottom: 50px;
@@ -395,4 +395,25 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 10px;
   color: gray;
   font-size: 0.9rem;
+}
+
+/* ///////////////////////////// */
+
+.main7-list-wrapper {
+  display: flex;
+}
+
+.main7-list {
+  flex: 1;
+}
+
+.footer {
+  width: 1080px;
+  margin: auto;
+  border-top: 1px solid black;
+}
+
+.footer-wrapper {
+  padding: 30px 10px;
+  display: flex;
 }
