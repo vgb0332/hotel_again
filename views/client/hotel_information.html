@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../public/client/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../public/client/css/common.css">
+    <link rel="stylesheet" href="../../public/client/css/hotel_information.css">
+    <link rel="stylesheet" href="../../public/client/css/gnb.css">
+    <link rel="stylesheet" href="../../public/client/css/search-bar.css">
+    <link rel="stylesheet" href="../../public/client/css/footer.css">
+    <link rel="stylesheet" href="../../public/client/vendor/slick/slick.css">
+    <script src="../../public/client/vendor/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <title> 더블유 디자인 호텔 HOTEL_INFORMATION </title>
+  </head>
+  <body>
+
+    <!-- gnb -->
+    <div class='gnb-wrapper'>
+      <div class="gnb-container">
+        <div class="gnb-event">
+          <span class="event-desc"> <호텔 최저가 예약 이벤트> 총 예약 결제 금액에서 <font color="red">4%</font> 할인 </span>
+          <span>
+            <img src="../../public/client/images/01_main/main_event_search.png" class="gnb-event-btn">
+          </span>
+        </div>
+        <div class='gnb-navbar'>
+          <span> 호텔정보 </span>
+          <span> 공지사항 </span>
+          <span> 이벤트 </span>
+          <span> SHOP </span>
+          <span> <font color="red">회원가입</font> </span>
+        </div>
+      </div>
+    </div>
+    <!--    -->
+
+    <!-- search bar -->
+    <div class='search-bar-wrapper'>
+      <div class='search-bar-container'>
+        <div class="search-bar-logo">
+          <img src="../../public/client/images/01_main/main_bar_logo.png" class="nav-logo">
+        </div>
+        <div class='search-bar-list'>
+
+          <!-- 검색 -->
+          <div class='section search'>
+            <div class='title'>
+              <span> 예약 가능 객실 </span>
+            </div>
+            <div class='content' style="cursor:pointer;">
+              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
+              <span> 검색 </span>
+            </div>
+          </div>
+
+          <!-- 인원수 -->
+          <div class='section count'>
+            <div class='title'>
+              <span> 인원수 </span>
+            </div>
+            <div class='content'>
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
+            </div>
+          </div>
+
+          <!-- 인원수 -->
+          <div class='section count'>
+            <div class='title'>
+              <span> 예약 날짜 </span>
+            </div>
+            <div class='content' style="margin-left:30px;padding-top:0px;">
+              <span style="font-size:1rem;display:inline-block;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
+              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" style="margin-bottom:40px;" class="btn-image">
+              <script type="text/javascript">
+                var nowTemp = new Date();
+                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                var nowTemp2 = new Date(nowTemp.setDate(nowTemp.getDate()+1));
+                var now2 = new Date(nowTemp2.getFullYear(), nowTemp2.getMonth(), nowTemp2.getDate(), 0, 0, 0, 0);
+                $('#dates').daterangepicker({
+                    "showISOWeekNumbers": true,
+                    "timePicker24Hour": true,
+                    "autoApply": true,
+                    "locale": {
+                        "format": "YYYY-MM-DD",
+                        "separator": "  ~  ",
+                        "applyLabel": "Apply",
+                        "cancelLabel": "Cancel",
+                        "fromLabel": "From",
+                        "toLabel": "To",
+                        "customRangeLabel": "Custom",
+                        "weekLabel": "W",
+                        "daysOfWeek": [
+                            "일",
+                            "월",
+                            "화",
+                            "수",
+                            "목",
+                            "금",
+                            "토"
+                        ],
+                        "monthNames": [
+                            "1월",
+                            "2월",
+                            "3월",
+                            "4월",
+                            "5월",
+                            "6월",
+                            "7월",
+                            "8월",
+                            "9월",
+                            "10월",
+                            "11월",
+                            "12월"
+                        ],
+                        "firstDay": 1
+                    },
+                    "startDate":now,
+                    "endDate": now2,
+                    "minDate": now
+                },
+                function(start, end, label) {
+                  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  $("#startDate").text(start.format('YYYY-MM-DD'));
+                  $("#endDate").text(end.format('YYYY-MM-DD'));
+                });
+              </script>
+            </div>
+          </div>
+
+          <!-- 호텔 선택 -->
+          <div class='section hotel' style="border-left: 1px solid #888888;">
+            <div class='title'>
+              <span> HOTEL BRAND </span>
+            </div>
+            <div class='content'>
+              <div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                호텔 선택
+              </div>
+              <img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+            </div>
+            <div id="hotel_list" class="hotel-select" style="width:220px;">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            $("#count_down").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              if(cur_val <= 1) return false;
+              $("#count_val").val( cur_val - 1 );
+            });
+
+            $("#count_up").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              $("#count_val").val( cur_val + 1 );
+            });
+
+            $("#select_hotel").click( (e) => {
+              $("#hotel_list").toggle();
+            });
+
+            $("#hotel_list span").click( (e) => {
+              console.log($(e.target).text());
+              $("#target_hotel").text($(e.target).text());
+              $("#hotel_list").hide();
+            });
+
+          </script>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel1">
+      <div class="hotel1-background">
+        <img src="../../public/client/images/01_main/main_hound.png" class="hotel1-logo-img">
+      </div>
+    </div>
+
+    <div class="hotel2">
+      <div class="hotel2-top">
+        <div class="hotel2-title">
+          광안 하운드 호텔
+        </div>
+        <div class="hotel2-address">
+          부산 수영구 남천바다로33번길 12 (광안동)
+        </div>
+      </div>
+      <div class="hotel2-body">
+        <div class="hotel2-image-container">
+          <span id="hotel2_prev">
+            <img src="../../public/client/images/03_hotel_information/info_left.png" class="image-ctrl-btn">
+          </span>
+
+          <div id="hotel2">
+            <div class="hotel2-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+            </div>
+            <div class="hotel2-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+            </div>
+          </div>
+
+          <span id="hotel2_next">
+            <img src="../../public/client/images/03_hotel_information/info_right.png" class="image-ctrl-btn">
+          </span>
+
+          <div class="hotel2-preview-container">
+            <span id="hotel2_preview_prev">
+              <img src="../../public/client/images/03_hotel_information/info_left_small.png" class="image-ctrl-btn">
+            </span>
+
+            <div id="hotel2_preview" class="hotel2-preview">
+              <div class="hotel2-preview-image" style="background-image: url('../../public/client/images/main_sample1.jpg');"></div>
+              <div class="hotel2-preview-image" style="background-image: url('../../public/client/images/main_sample1.jpg');"></div>
+            </div>
+
+            <span id="hotel2_preview_next">
+              <img src="../../public/client/images/03_hotel_information/info_right_small.png" class="image-ctrl-btn">
+            </span>
+          </div>
+
+        </div>
+        <script type="text/javascript">
+        $(function(){
+          $('#hotel2').slick({arrows: false});
+
+          $('#hotel2_preview').slick({
+            arrow:false,
+            slidesToShow: 7,
+          });
+
+          $("#hotel2_prev").click( (e) => {
+            $("#hotel2").slick('slickPrev');
+          });
+
+          $("#hotel2_next").click( (e) => {
+            $("#hotel2").slick('slickNext');
+          });
+
+          $("#hotel2_preview_prev").click( (e) => {
+            $("#hotel2_preview").slick('slickPrev');
+          });
+
+          $("#hotel2_preview_next").click( (e) => {
+            $("#hotel2_preview").slick('slickNext');
+          });
+
+          $(".hotel2-preview-image").click( (e) => {
+            e.preventDefault();
+            var index = $(e.target).attr('data-slick-index');
+            $("#hotel2").slick('slickGoTo', parseInt(index));
+          });
+        })
+        </script>
+        <div class="hotel2-info">
+          <div class="hotel2-info-list">
+            <div class="hotel2-info-list-icon">
+              <img src="../../public/client/images/03_hotel_information/info_01_clock.png">
+            </div>
+            <div class="hotel2-info-list-time">
+              <div class="">체크인&nbsp;&nbsp;&nbsp;&nbsp; : 16:00 </div>
+              <div class="">체크아웃&nbsp; : ~12:00 </div>
+            </div>
+
+          </div>
+
+          <div class="hotel2-info-sub-list">
+            <div class="hotel2-info-list-icon">
+              <img src="../../public/client/images/03_hotel_information/info_02_pin.png">
+            </div>
+            <div class="hotel2-info-list-location1">
+              <div class="">부산시 해운대구 / 광안리</div>
+            </div>
+          </div>
+
+          <div class="hotel2-info-sub-list">
+            <div class="hotel2-info-list-icon">
+              <img src="../../public/client/images/03_hotel_information/info_03_star.png">
+            </div>
+            <div class="hotel2-info-list-location2">
+              <div class="">광안리 해수욕장 / 해운대</div>
+            </div>
+          </div>
+
+          <div class="hotel2-info-sub-list">
+            <div class="hotel2-info-list-icon">
+              <img src="../../public/client/images/03_hotel_information/info_04_spoon.png">
+            </div>
+            <div class="hotel2-info-list-food">
+              <div class="">조식: 있음 / 추가금액 발생</div>
+            </div>
+          </div>
+
+          <div class="hotel2-info-sub-list">
+            <div class="hotel2-info-list-contact">
+              <div class="" style="display:flex;">
+                <div class="hotel2-info-list-icon">
+                  <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_05_mail.png">
+                </div>
+                <div class="">number25@naver.com</div>
+              </div>
+              <div class="" style="display:flex;">
+                <div class="hotel2-info-list-icon">
+                  <img src="../../public/client/images/03_hotel_information/info_06_phone.png">
+                </div>
+                <div class="">000-0000-0000</div>
+              </div>
+              <div class="" style="display:flex;">
+                <div class="hotel2-info-list-icon">
+                  <img src="../../public/client/images/03_hotel_information/info_07_fax.png">
+                </div>
+                <div class="">000-0000-0000</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hotel3">
+      <div class="hotel3-title">
+        호텔 소개
+      </div>
+      <div class="hotel3-desc">
+        감각적인 트랜드를 선도하고, 광안리의 바다와 아름다운 광안대교를 한눈에 감상할 수 있으며, 젊고 열정적인 컨텐츠를 경험할 수 있습니다.
+      </div>
+
+    </div>
+
+    <div class="hotel4">
+      <div class="hotel4-title">
+        호텔 상세 정보
+      </div>
+      <div class="hotel4-desc">
+        <div class="hotel4-sub-title">
+          광안리 뷰깡패 하운드 호텔
+        </div>
+        <div> * 광안리 해수욕장까지 도보로 1분 거리에 위치하고 있어 접근성이 좋은 호텔입니다.</div>
+        <div> * 광안리 해수욕장까지 도보로 1분 거리에 위치하고 있어 접근성이 좋은 호텔입니다.</div>
+        <div> * 광안리 해수욕장까지 도보로 1분 거리에 위치하고 있어 접근성이 좋은 호텔입니다.</div>
+        <div> * 광안리 해수욕장까지 도보로 1분 거리에 위치하고 있어 접근성이 좋은 호텔입니다.</div>
+      </div>
+
+      <div class="hotel4-desc">
+        <div class="hotel4-sub-title">
+          추가 금액
+        </div>
+        <div> 투숙 기준인원 2인으로 추가인원에 대한 비용은 현장 문의 및 결재</div>
+      </div>
+
+      <div class="hotel4-desc">
+        <div class="hotel4-sub-title">
+          하운드 908 PUB 오픈기념
+        </div>
+        <div> 1.통큰 서비스 이벤트: 투숙객(2기준) 생맥주 2잔 무료 제공!</div>
+        <br>
+        <div> 2.인스타 이벤트</div>
+        <div> #광안리브런치#광안리펍#광안리레스토랑#광안리분위기#광안리카페</div>
+        <div> 해시테그 걸고, 인스타 올리면 생맥주 무료 한잔 더 제공!</div>
+        <br>
+        <div> 기간: 5월31일까지(투숙일 기준) [일요일 정기 휴무]</div>
+        <div> 이용시간: 18시~22시</div>
+        <div> 이용장소: 호텔 지하1층 하운드908</div>
+      </div>
+    </div>
+
+    <div class="hotel4">
+      <div class="hotel4-title">
+        유의 사항
+      </div>
+      <div class="hotel4-desc">
+        <div> * 체크인/아웃 시간은 요일별 상의하오니 예작 전 꼭 확인해 주세요.</div>
+        <div> * 체크인/아웃 시간은 요일별 상의하오니 예작 전 꼭 확인해 주세요.</div>
+        <div> * 체크인/아웃 시간은 요일별 상의하오니 예작 전 꼭 확인해 주세요.</div>
+      </div>
+    </div>
+
+    <div class="hotel5">
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel5-list">
+        <div class="hotel5-list-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
+
+        </div>
+        <div class="hotel5-list-desc">
+          <div class="hotel5-list-desc-title">
+            패밀리 트윈 오션뷰
+          </div>
+          <div class="hotel5-list-desc-info-wrapper">
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_bed.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                침대 사이즈: 더블x2
+              </div>
+            </div>
+            <div class="hotel5-list-desc-info">
+              <div class="hotel5-list-desc-icon">
+                <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_icon_person.png">
+              </div>
+              <div class="hotel5-list-desc-desc">
+                최대 인원: 기준 2명 (최대 4명)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="hotel5-list-desc-price">
+            <div class="hotel5-list-desc-fakeprice">
+              170,000원
+            </div>
+            <div class="hotel5-list-desc-realprice">
+              <span class='sale-percentage'>4%할인</span>
+              <span class='real-price'>163,200</span> <span class="won"> 원</span>
+            </div>
+          </div>
+          <div class="hotel5-list-desc-reserve-btn">
+            <span>예약 하기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-logo">
+          <img src="../../public/client/images/01_main/main_botton_logo.png" class="footer-logo-img">
+        </div>
+        <div class="footer-content">
+          <div class="footer-content-title">
+            &nbsp;호텔 프렌차이즈 사업문의
+          </div>
+          <div class="footer-content-contact">
+            1877-1318 &nbsp;
+            <span> <img src="../../public/client/images/01_main/main_icon_blog.png" class=""> </span>
+            <span> <img src="../../public/client/images/01_main/main_icon_face.png" class=""> </span>
+            <span> <img src="../../public/client/images/01_main/main_icon_insta.png" class=""> </span>
+            <span> <img src="../../public/client/images/01_main/main_icon_map.png" class=""> </span>
+          </div>
+
+          <div class="footer-content-company-info">
+            대표자: 이승훈 사업장 소재지: 부산광역시 해운대구 우동 1410 트럼프월드마린 D동 상가 2F 208, 209호 사업자 등록번호: 823-86-00673<br>
+            개인정보관리책임자: 이승훈 팩스번호: 051-921-0051 프렌차이즈 사업 문의: 1877-1318 평일 10:00~19:00 (토/일/공휴일휴무)<br>
+            이메일: lsr@wnthotels.com official web: www.wnh.co.kr
+          </div>
+        </div>
+        <div class="footer-extra">
+          <img src="../../public/client/images/01_main/main_tab_number.png" class="footer-extra-contact-btn">
+          <div class="footer-extra-service">
+            <span style="cursor:pointer;">서비스 이용약관 보기</span>
+            <br>
+            <span style="cursor:pointer;">개인정보 처리 약관 보기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

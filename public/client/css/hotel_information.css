@@ -1,0 +1,342 @@
+.hotel1 {
+
+}
+
+.hotel1-background {
+  height: 200px;
+  background-color: white;
+  display: flex;
+  border-bottom: 5px solid black;
+  width: 1080px;
+  margin: auto;
+}
+
+.hotel1-logo-img {
+  margin: auto;
+}
+
+.hotel2 {
+  width: 1080px;
+  margin: auto;
+}
+
+.hotel2-top {
+  padding: 20px 0;
+  padding-left: 10px;
+}
+
+.hotel2-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hotel2-address {
+  font-weight: 300;
+}
+
+.hotel2-body {
+  display: flex;
+}
+
+.hotel2-image-container {
+  position: relative;
+}
+
+#hotel2 {
+  width: 800px;
+}
+
+#hotel2_prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-left: 20px;
+  opacity: 0.6;
+}
+
+#hotel2_next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-right: 20px;
+  opacity: 0.6;
+}
+
+.image-ctrl-btn {
+  margin: auto;
+}
+
+#hotel2_prev:hover{
+  opacity: 1;
+}
+
+#hotel2_next:hover{
+  opacity: 1;
+}
+
+.hotel2-image {
+  padding-bottom: 500px;
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-size: 100% 500px;
+}
+
+.hotel2-preview {
+  /* position: absolute;
+  height: 110px;
+  bottom: 0;
+  left: 0;
+  background: black;
+  z-index: 2;
+  padding: 5px; */
+}
+
+.hotel2-preview-image {
+  padding-bottom: 100px;
+  /* padding-left: 5px;
+  padding-right: 5px; */
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-size: 100% 100px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.hotel2-preview-container {
+  position: relative;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  background: black;
+  z-index: 2;
+  /* width: 100%; */
+  padding: 5px;
+  display: flex;
+}
+
+.hotel2-preview {
+  flex: 1;
+  height: 100%;
+}
+
+#hotel2_preview_prev {
+  z-index: 3;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-left: 20px;
+  opacity: 0.6;
+}
+
+#hotel2_preview_next {
+  z-index: 3;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-right: 20px;
+  opacity: 0.6;
+}
+
+#hotel2_preview_prev:hover{
+  opacity: 1;
+}
+
+#hotel2_preview_next:hover{
+  opacity: 1;
+}
+
+
+.hotel2-info {
+  flex: 1;
+  margin-left: 10px;
+  border-top: 2px solid black;
+}
+
+.hotel2-info-list {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
+.hotel2-info-sub-list {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+  border-top: 1px solid #d3d3d3;
+  margin-right: 40px;
+}
+
+.hotel2-info-list-icon{
+  padding: 0 10px;
+  width: 20px;
+}
+
+.hotel2-info-list-time {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hotel2-info-list-location1 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hotel2-info-list-location2 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hotel2-info-list-food {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hotel2-info-list-contact {
+  font-size: 0.9rem;
+  font-weight: 300;
+  /* color: gray; */
+}
+
+.hotel3 {
+  border-top: 2px solid black;
+  margin: 40px auto;
+  padding-left: 10px;
+  width: 1080px;
+}
+
+.hotel3-title {
+  padding: 20px 0;
+  font-weight: 500;
+}
+
+.hotel3-desc {
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.hotel4 {
+  border-top: 2px solid black;
+  margin: 40px auto;
+  padding-left: 10px;
+  width: 1080px;
+}
+
+.hotel4-title {
+  padding: 20px 0;
+  font-weight: 500;
+}
+
+.hotel4-desc {
+  padding-bottom: 30px;
+  font-weight: 300;
+  line-height: 2.2rem;
+  font-size: 1.2rem;
+}
+
+.hotel4-sub-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.hotel5 {
+  width: 1080px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.hotel5-list {
+  border: 1px solid #d3d3d3;
+  margin: 0 30px;
+  margin-bottom: 100px;
+}
+
+.hotel5-list-image {
+  padding-bottom: 200px;
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
+}
+.hotel5-list-desc {
+}
+
+.hotel5-list-desc-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 10px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.hotel5-list-desc-info-wrapper {
+  border: 1px solid #d3d3d3;
+  padding: 5px 10px;
+}
+
+.hotel5-list-desc-info {
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.hotel5-list-desc-icon {
+  width: 30px;
+}
+
+.hotel5-list-desc-desc {
+  flex: 1;
+  font-weight: 300;
+}
+
+.hotel5-list-desc-price {
+  padding: 5px 10px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.hotel5-list-desc-fakeprice {
+ text-decoration: line-through;
+ font-weight: 300;
+ text-align: right;
+ padding-right: 20px;
+ line-height: 0.5rem;
+}
+
+.hotel5-list-desc-realprice {
+  text-align: right;
+}
+
+.sale-percentage {
+  font-size: 0.9rem;
+  font-weight: 300;
+
+}
+
+.real-price {
+  color: #ff4d4d;
+  font-size: 2rem;
+  font-weight: bold;
+
+}
+
+.won {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.hotel5-list-desc-reserve-btn {
+  background: #ff4d4d;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}

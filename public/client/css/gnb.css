@@ -1,0 +1,60 @@
+.gnb-wrapper {
+  width:100%;
+}
+
+.gnb-container {
+  width: 1080px;
+  padding: 5px 0;
+  margin: 3px auto;
+  display: flex;
+}
+
+.gnb-event {
+  -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */
+  flex: 1;
+  border-right: 1px solid #555555;
+  padding: 5px 0;
+}
+
+.gnb-event .event-desc {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.gnb-event .event-btn {
+  cursor: pointer;
+  float: right;
+  margin-right: 30px;
+}
+
+.gnb-event .event-btn .arrow-down {
+  width: 0.8rem;
+}
+
+.gnb-navbar {
+  -webkit-flex: 0.9;  /* Safari 6.1+ */
+  -ms-flex: 0.9;   /* IE 10 */
+  flex: 0.9;
+  text-align: right;
+  padding: 5px 0;
+}
+
+.gnb-navbar span {
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.gnb-event-btn {
+  cursor: pointer;
+  float: right;
+  margin-right: 30px;
+  background: black;
+  color : white;
+  cursor: pointer;
+}

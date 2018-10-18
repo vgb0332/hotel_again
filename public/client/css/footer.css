@@ -1,0 +1,56 @@
+
+.footer {
+  width: 1080px;
+  margin: auto;
+  border-top: 1px solid black;
+  margin: 20px auto;
+}
+
+.footer-wrapper {
+  display: flex;
+}
+
+.footer-logo {
+  display:flex;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.footer-content {
+  border-right: 1px solid black;
+  padding: 40px 0;
+  width:900px;
+}
+
+.footer-content-title {
+  font-size:0.9rem;
+  line-height:0.8rem;
+}
+
+.footer-content-contact {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+.footer-content-company-info {
+  font-size:0.75rem;
+  line-height: 1.3rem;
+}
+
+.footer-extra {
+  padding: 40px 10px;
+  margin: auto 10px;
+  display:flex;
+  flex-direction:column;
+}
+
+.footer-extra-contact-btn {
+  cursor: pointer;
+}
+
+.footer-extra-service {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  text-align: center;
+}
