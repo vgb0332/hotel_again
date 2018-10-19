@@ -1,0 +1,231 @@
+.brand1 {
+  width: 100%;
+}
+
+.brand1-background {
+  padding-bottom: 300px;
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-size: 100% 300px;
+}
+
+.brand1-logo {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 300px;
+}
+
+.brand1-logo-img {
+  margin: auto;
+}
+
+.brand2 {
+  width: 1080px;
+  margin: auto;
+}
+
+.brand2-list {
+  margin: 100px 0;
+}
+
+.brand2-list-title {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 5px;
+}
+
+.brand2-list-sub-title {
+  font-size: 1rem;
+  font-weight: 300;
+  color: gray;
+}
+
+.brand2-list-address {
+  padding-top: 5px;
+  font-size: 0.9rem;
+  /* color: gray; */
+}
+
+.brand2-list-body {
+  display: flex;
+  padding-top: 30px;
+  height: 300px;
+}
+
+.brand2-list-image {
+  width: 33%;
+}
+
+.brand2-list-map {
+  width: 33%;
+}
+
+.brand2-list-info {
+  width: 33%;
+  position: relative;
+}
+
+.brand2-list-info-container {
+  display: flex;
+  padding:  0 20px;
+  padding-top: 5px;
+}
+
+.brand2-list-info-icon {
+  width: 30px;
+}
+
+.brand2-list-info-content {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.brand2-list-info-desc {
+  padding:  0 20px;
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding-top: 30px;
+}
+
+.brand2-list-btns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+
+.brand2-list-btn {
+  flex: 1;
+  text-align: center;
+  display: block;
+  padding: 10px 0;
+  background: blue;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.brand-divider {
+  width: 100%;
+  height: 50px;
+  background: #eaeaea;
+  background-position: center 0%;
+  background-repeat: repeat;
+  background-size: 100px 50px;
+}
+
+.brand3 {
+  width: 1080px;
+  margin: auto;
+}
+
+.brand3-container {
+
+}
+
+.brand3-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-top: 150px;
+}
+
+.brand3-logo {
+  display: flex;
+}
+
+.brand3-logo-img {
+  margin: auto;
+  width: 100px;
+}
+
+.brand3-desc {
+  font-weight: 200;
+  text-align: center;
+  padding: 50px 100px;
+  line-height: 2rem;
+}
+
+.brand3-desc p {
+
+}
+
+.brand3-colors {
+  display: flex;
+  text-align: center;
+  height: 100px;
+}
+
+.brand3-color {
+  flex: 1;
+  display: flex;
+}
+
+.brand3-color span {
+  color: white;
+  align-self: flex-end;
+  display: block;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.brand3-color.a {
+  background-color: #ffcf00;
+}
+
+.brand3-color.b {
+  background-color: #737172;
+}
+
+.brand3-color.c {
+  background-color: #231401;
+}
+
+#hotel_site {
+  background-color: #4e4e4e;
+}
+
+#hotel_photo {
+  background-color: #294c82;
+}
+
+#hotel_reserve {
+  background-color: #ce9b9a;
+}
+
+.brand3-main-logos {
+  margin: 70px 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.brand3-main-logo {
+  position: relative;
+  height: 400px;
+  display: flex;
+}
+
+.brand3-main-logo-title {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 200;
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brand3-main-logo.a {
+  background-color: #ffcf00;
+}
+
+.brand3-main-logo.b {
+  background-color: #737172;
+}

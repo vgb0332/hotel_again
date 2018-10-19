@@ -1,0 +1,44 @@
+.event {
+  border-top: 1px solid white;
+}
+
+.event-title {
+  display: flex;
+  background: black;
+  height: 300px;
+}
+
+.event-title-img {
+  margin: auto;
+}
+
+.event-main-list-img{
+  width: 100%;
+}
+
+.event-main {
+  width: 1080px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-row-gap: 50px;
+  grid-column-gap: 30px;
+}
+
+.event-main-list {
+}
+
+.event-main-list-desc {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.event-more-btn {
+  width: 1080px;
+  margin : auto;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 100px;
+}

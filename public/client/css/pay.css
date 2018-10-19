@@ -1,0 +1,355 @@
+body{
+    height: 2000px;
+    position: relative;
+}
+.pay{
+    width:100%;
+}
+.pay_banner{
+    width:100%;
+    height: 300px;
+    background-color: black;
+    position: relative;
+    top:5px;
+}
+.pay_wrapper{
+    width:100%;
+    position: relative;
+}
+.pay_logo{
+    color:white;
+    width: 200px;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: auto;
+    position: relative;
+    top: 120px;
+}
+.pay_content{
+    position: relative;
+    top:50px;
+    width:100%;
+    height: 1500px;
+}
+.pay_content_wrapper{
+    width: 1080px;
+    margin: 0 auto;
+}
+.pay_list{
+    width:650px;
+    float: left;
+    height: auto;
+}
+.pay_bill{
+    width:400px;
+    margin: 0 15px;
+    float: left;
+}
+.pay_room{
+    width:100%;
+    height: 275px;
+}
+.pay_room_pic{
+    background-color: transparent;
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:270px;
+    height: 250px;
+    margin: 25px;
+    float: left;
+    border: 1px solid black;
+}
+.pay_room_info{
+    width: 250px;
+    margin: 30px 25px 110px 15px;;
+    float: left;
+}
+.pay_room_name{
+    font-size:22px;
+}
+.pay_hotel_name{
+    font-size:14px;
+    color:#ff6666;
+    padding: 7px 0;
+}
+.divider{
+    background-color: transparent;
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:100%;
+    height: 1.5px;
+}
+.pay_clock{
+    width:13px;
+    height: 13px;
+    margin: 10px;
+    float: left;
+}
+.pay_time{
+    float:left;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 5px;
+}
+.pay_text_head{
+    background-color: transparent;
+	background-size:contain;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:620px;
+    height: 40px;
+    margin:  25px 0 25px 25px;
+}
+.pay_name{
+    margin-left: 30px;
+}
+.p_name{
+    font-size:15px;
+    margin: 10px;
+    display: inline-block;
+    float: left;
+}
+.pay_name input[type=text]{
+    float: left;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #c7c7c7;
+    padding-left: 30px;
+    width: 160px;
+    letter-spacing: 1.5px;
+}
+.pay_name input[type=text]:focus{
+    outline: none;
+}
+.pay_name .p_tip{
+    color:#ff6666;
+    display: inline-block;
+    height: 30px;
+    font-size: 11px;
+    margin: 10px;
+}
+.extra_head{
+    background-color: transparent;
+	background-size: cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:620px;
+    height: 1.5px;
+    margin:  10px 0 10px 25px;
+}
+.pay_extra{
+
+}
+.pay_extra p{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    margin-left: 35px;
+    text-shadow: 0px 0px 0px black;
+}
+.extra_img{
+    background-color: transparent;
+	background-size: cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width: 610px;
+    height: 100px;
+    margin: 15px 0px 15px 35px;
+}
+.extra_select{
+    margin: 15px 10px 15px 35px;
+}
+.extra_select .extra_menu{
+    font-size: 16px;
+}
+.extra_select .extra_menu2{
+    font-size: 13px;
+    color:rgb(255,58,40);
+    margin-top: 5px;
+    display: inline-block;
+}
+.extra_select .extra_input{
+    float: right;
+
+
+}
+.extra_select #extra_count{
+    width:40px;
+    text-align: center;
+    padding: 4px 0 3px;
+    font-size: 13px;
+    box-shadow: inset 0 0.5em 0.5em -1em  gray;
+}
+.extra_select input[type=button]{
+    color:#c7c7c7;
+    font-weight: 100;
+    background-color: #272727;
+    border: none;
+    width: 27px;
+    height: 29px;
+    margin:  -3px;
+}
+.pay_name .p_button{
+    background-color: transparent;
+	background-size: cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:90px;
+    height: 27px;
+    float: left;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+.pay_name .p_use{
+    margin: 10px 5px;
+    display: inline-block;
+}
+.pay_point .pay_usetip{
+    clear: both;
+    margin: 0 40px 20px;
+    font-size: 11px;
+    color: #be0101;
+}
+.pay_point #pay_point_input{
+    text-align: right;
+    padding-right: 10px;
+}
+.pay_policy{
+    margin: 10px 5px 10px 25px;
+    padding: 10px 0 10px ;
+    border-bottom: 1px solid #a7a2a2;
+
+}
+.pay_policy .policy_wrapper{
+    width:100%;
+
+}
+.pay_policy .policy_head{
+    float: left;
+    width:510px;
+    font-size: 15px;
+    margin: 0 0 10px 20px;
+}
+.pay_policy .policy_button{
+    color: #be0101;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.pay_policy .policy_text{
+    clear: both;
+    height: 200px;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 15px;
+    overflow: auto;
+    display: none;
+}
+.pay_bill{
+    color:white;
+}
+.pay_bill>div{
+    background-color: black;
+}
+.bill_checktime{
+    margin-top: 30px;
+    height: 80px;
+    padding: 10px 10px;
+}
+
+.bill_checktime .bill_check{
+    width:130px;
+    height: 50px;
+    margin: 10px;
+     float: left;
+}
+.bill_checktime .checkicon{
+    background-color: transparent;
+	background-size: contain;
+	background-repeat:   no-repeat;
+	background-position: center center;
+    width:20px;
+    height: 20px;
+    margin: 30px 15px 10px 25px ;
+    float: left;
+
+}
+.bill_checktime .check_desc{
+    font-size: 16px;
+    color:#ff6666;
+    padding-left: 10px;
+}
+.bill_checktime .checkdate{
+    font-size: 22px;
+    font-weight: 100;
+    width:145px;
+    border-bottom: 1px solid #272727;
+
+}
+.bill_checktime .checkdate i{
+    padding:9px 10px 7px;
+    font-size: 16px;
+}
+.bill_pd{
+    height: 50px;
+    margin: 2px 0 10px 0;
+    padding: 10px 25px;
+}
+.bill_p{
+    font-size:13px;
+    line-height: 25px;
+}
+.bill_p span:last-child{
+    float: right;
+}
+.bill_total{
+
+    height: 240px;
+    margin: 2px 0 ;
+    padding: 10px 15px;
+}
+.bill_t{
+    font-size:15px;
+    line-height: 35px;
+    padding: 0 10px;
+}
+.bill_t span:last-child{
+    float: right;
+}
+.total_price{
+    text-align: right;
+    line-height: 13px;
+    padding-right: 10px;
+}
+.total_price p:first-child{
+    font-size: 16px;
+    color:#ff6666;
+}
+.total_price p:last-child{
+    font-size: 28px;
+    letter-spacing: 1.5px;
+}
+.total_payment{
+    width: 100%;
+    height: 100px;
+    background-color: white !important;
+}
+.pay_bill .payment{
+    width:197px;
+    height: 80px;
+    background-color: #ff6666;
+    font-size: 17px;
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+
+
+}
+.pay_bill .payment:first-child{
+    float: right;
+}

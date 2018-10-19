@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../public/client/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../public/client/css/common.css">
+  	<link rel="stylesheet" href="../../public/client/css/sign.css">
+    <link rel="stylesheet" href="../../public/client/css/gnb.css">
+    <link rel="stylesheet" href="../../public/client/css/search-bar.css">
+    <link rel="stylesheet" href="../../public/client/css/footer.css">
+    <link rel="stylesheet" href="../../public/client/vendor/slick/slick.css">
+    <script src="../../public/client/vendor/slick/slick.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <title> 더블유 디자인 호텔 MAIN </title>
+</head>
+	<body>
+		<!-- gnb -->
+    <div class='gnb-wrapper'>
+      <div class="gnb-container">
+        <div class="gnb-event">
+          <span class="event-desc"> <호텔 최저가 예약 이벤트> 총 예약 결제 금액에서 <font color="red">4%</font> 할인 </span>
+          <span>
+            <img src="../../public/client/images/01_main/main_event_search.png" class="gnb-event-btn">
+          </span>
+        </div>
+        <div class='gnb-navbar'>
+          <span class="my_page">강병욱님 / MY PAGE</span>
+          <span class="my_point">포인트 3,000P</span>
+          <span> 호텔정보 </span>
+          <span> 공지사항 </span>
+          <span> 이벤트 </span>
+          <span> SHOP </span>
+          <span> <font color="red">로그아웃</font> </span>
+        </div>
+      </div>
+    </div>
+    <!--    -->
+
+    <!-- search bar -->
+    <div class='search-bar-wrapper'>
+      <div class='search-bar-container'>
+        <div class="search-bar-logo">
+          <img src="../../public/client/images/01_main/main_bar_logo.png" class="nav-logo">
+        </div>
+        <div class='search-bar-list'>
+
+          <!-- 검색 -->
+          <div class='section search'>
+            <div class='title'>
+              <span> 예약 가능 객실 </span>
+            </div>
+            <div class='content' style="cursor:pointer;">
+              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
+              <span> 검색 </span>
+            </div>
+          </div>
+
+          <!-- 인원수 -->
+          <div class='section count'>
+            <div class='title'>
+              <span> 인원수 </span>
+            </div>
+            <div class='content'>
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
+            </div>
+          </div>
+
+          <!-- 인원수 -->
+          <div class='section count'>
+            <div class='title'>
+              <span> 예약 날짜 </span>
+            </div>
+            <div class='content' style="margin-left:30px;padding-top:0px;">
+              <span style="font-size:1rem;display:inline-block;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
+              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" style="margin-bottom:40px;" class="btn-image">
+              <script type="text/javascript">
+                var nowTemp = new Date();
+                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                var nowTemp2 = new Date(nowTemp.setDate(nowTemp.getDate()+1));
+                var now2 = new Date(nowTemp2.getFullYear(), nowTemp2.getMonth(), nowTemp2.getDate(), 0, 0, 0, 0);
+                $('#dates').daterangepicker({
+                    "showISOWeekNumbers": true,
+                    "timePicker24Hour": true,
+                    "autoApply": true,
+                    "locale": {
+                        "format": "YYYY-MM-DD",
+                        "separator": "  ~  ",
+                        "applyLabel": "Apply",
+                        "cancelLabel": "Cancel",
+                        "fromLabel": "From",
+                        "toLabel": "To",
+                        "customRangeLabel": "Custom",
+                        "weekLabel": "W",
+                        "daysOfWeek": [
+                            "일",
+                            "월",
+                            "화",
+                            "수",
+                            "목",
+                            "금",
+                            "토"
+                        ],
+                        "monthNames": [
+                            "1월",
+                            "2월",
+                            "3월",
+                            "4월",
+                            "5월",
+                            "6월",
+                            "7월",
+                            "8월",
+                            "9월",
+                            "10월",
+                            "11월",
+                            "12월"
+                        ],
+                        "firstDay": 1
+                    },
+                    "startDate":now,
+                    "endDate": now2,
+                    "minDate": now
+                },
+                function(start, end, label) {
+                  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  $("#startDate").text(start.format('YYYY-MM-DD'));
+                  $("#endDate").text(end.format('YYYY-MM-DD'));
+                });
+              </script>
+            </div>
+          </div>
+
+          <!-- 호텔 선택 -->
+          <div class='section hotel' style="border-left: 1px solid #888888;">
+            <div class='title'>
+              <span> HOTEL BRAND </span>
+            </div>
+            <div class='content'>
+              <div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                호텔 선택
+              </div>
+              <img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+            </div>
+            <div id="hotel_list" class="hotel-select" style="width:220px;">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            $("#count_down").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              if(cur_val <= 1) return false;
+              $("#count_val").val( cur_val - 1 );
+            });
+
+            $("#count_up").click( (e) => {
+              var cur_val = Number($("#count_val").val());
+              $("#count_val").val( cur_val + 1 );
+            });
+
+            $("#select_hotel").click( (e) => {
+              $("#hotel_list").toggle();
+            });
+
+            $("#hotel_list span").click( (e) => {
+              console.log($(e.target).text());
+              $("#target_hotel").text($(e.target).text());
+              $("#hotel_list").hide();
+            });
+
+          </script>
+
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+        <div class="sign_content">
+            <div class="sign_content_wrapper">
+                <div class="sign_title" style="background-image: url('../../public/client/images/10_sign/sign_title.png')"></div>
+                <div class="sign_title2">회원가입</div>
+                <div class="sign_form">
+                    <div class="signup">
+                        <div class="head">이메일</div>
+                        <input type="text" placeholder="사용할 이메일 주소 입력">
+                    </div>
+                    <div class="signup">
+                        <div class="head">비밀번호</div>
+                        <input type="password" placeholder="8자~20자 이내">
+                    </div>
+                    <div class="signup">
+                        <div class="head">비밀번호 확인</div>
+                        <input type="password" >
+                    </div>
+                    <div class="signup">
+                        <div class="head">이름 (실명)</div>
+                        <input type="text" placeholder="실명 입력">
+                    </div>
+                    <div class="signup">
+                        <div class="head">생년월일</div>
+                        <input type="number" min="0" placeholder="예: 180101">
+                    </div>
+                    <div class="signup">
+                        <div class="head">휴대폰</div>
+                        <input type="number" min="0" placeholder="예: 01012345678">
+                    </div>
+                </div>
+                <div class="sign_checksection">
+                    <div class="checksection_wrapper">
+                        <input type="checkbox" id="sign_check1"/>
+                        <label for="sign_check1" style="background-image: url('../../public/client/images/09_login/login_check.png');"></label>
+                        <div class="check_desc" id="check_blank">이용약관 (필수)</div>
+                    </div>
+                    <div class="checksection_wrapper">
+                        <input type="checkbox" id="sign_check2" />
+                        <label for="sign_check2" style="background-image: url('../../public/client/images/09_login/login_check.png');"></label>
+                        <div class="check_desc">개인정보 수집 및 이용(필수)</div>
+                    </div>
+                </div>
+                <div class="sign_important">
+                    <div class="important_title" style="background-image: url('../../public/client/images/10_sign/sign_important.png')"></div>
+                    <div class="important_section">
+                        <div class="important_head">이용약관</div>
+                        <div class="important_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br></div>
+                    </div>
+                    <div class="important_section">
+                        <div class="important_head">개인정보 보호를 위한 이용자 동의사항<br><p>자세한 내용은 "개인정보취급방침을 확인 하시기 바랍니다.</p></div>
+                        <div class="important_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolor dolores repellendus unde commodi id ipsum obcaecati eveniet assumenda inventore praesentium, quo dolorem molestiae magni voluptas tempora fugiat accusamus eos.<br></div>
+                    </div>
+                </div>
+                <div class="sign_button" style="background-image: url('../../public/client/images/10_sign/sign_sign.png')"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+				<!-- footer -->
+				<div class="footer">
+					<div class="footer-wrapper">
+						<div class="footer-logo">
+							<img src="../../public/client/images/01_main/main_botton_logo.png" class="footer-logo-img">
+						</div>
+						<div class="footer-content">
+							<div class="footer-content-title">
+								&nbsp;호텔 프렌차이즈 사업문의
+							</div>
+							<div class="footer-content-contact">
+								1877-1318 &nbsp;
+								<span> <img src="../../public/client/images/01_main/main_icon_blog.png" class=""> </span>
+								<span> <img src="../../public/client/images/01_main/main_icon_face.png" class=""> </span>
+								<span> <img src="../../public/client/images/01_main/main_icon_insta.png" class=""> </span>
+								<span> <img src="../../public/client/images/01_main/main_icon_map.png" class=""> </span>
+							</div>
+
+							<div class="footer-content-company-info">
+								대표자: 이승훈 사업장 소재지: 부산광역시 해운대구 우동 1410 트럼프월드마린 D동 상가 2F 208, 209호 사업자 등록번호: 823-86-00673<br>
+								개인정보관리책임자: 이승훈 팩스번호: 051-921-0051 프렌차이즈 사업 문의: 1877-1318 평일 10:00~19:00 (토/일/공휴일휴무)<br>
+								이메일: lsr@wnthotels.com official web: www.wnh.co.kr
+							</div>
+						</div>
+						<div class="footer-extra">
+							<img src="../../public/client/images/01_main/main_tab_number.png" class="footer-extra-contact-btn">
+							<div class="footer-extra-service">
+								<span style="cursor:pointer;">서비스 이용약관 보기</span>
+								<br>
+								<span style="cursor:pointer;">개인정보 처리 약관 보기</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--  -->
+	</body>
+</html>
