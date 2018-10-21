@@ -90,11 +90,36 @@
 }
 
 .list2-right-list-image{
-  height: 300px;
+  height: 250px;
   background-position: center 0%;
   background-repeat: no-repeat;
-  background-size: 100% 300px;
+  background-size: 100% 250px;
   display: flex;
+  position: relative;
+}
+
+.list2-right-list-image .list-price-container {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.list2-right-list-image .list-fake-price {
+  color: white;
+  font-size: 0.9rem;
+  display: block;
+  text-decoration: line-through;
+  line-height: 1rem;
+}
+
+.list2-right-list-image .list-real-price {
+  color: white;
+  font-size: 1.2rem;
+  display: block;
+  font-weight: bold;
 }
 
 .list2-right-list-title {
@@ -102,6 +127,8 @@
   padding-top: 20px;
   padding-bottom: 5px;
   border: 1px solid #d3d3d3;
+  background: #fafafa;
+
 }
 
 .list2-right-list-title .title{
@@ -133,9 +160,11 @@
   color: white;
   display: inline-block;
   width: 90px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   float: right;
   cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 200;
 }
 
 .list2-right-list-info {
@@ -143,6 +172,8 @@
   padding-left: 10px;
   border: 1px solid #d3d3d3;
   border-top: 0px;
+  background: #fafafa;
+
 }
 
 .list2-right-list-info .info-location, .list2-right-list-info .info-phone {
@@ -157,6 +188,8 @@
   padding-bottom: 30px;
   border: 1px solid #d3d3d3;
   border-top: 0px;
+  background: #fafafa;
+
   /* letter-spacing: -1px; */
   /* padding-left: 10px; */
 }

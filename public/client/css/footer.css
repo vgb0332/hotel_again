@@ -42,6 +42,7 @@
   margin: auto 10px;
   display:flex;
   flex-direction:column;
+  position: relative;
 }
 
 .footer-extra-contact-btn {
@@ -53,4 +54,29 @@
   font-size: 0.8rem;
   line-height: 2rem;
   text-align: center;
+}
+
+.footer-list {
+  position: absolute;
+  background: white;
+  bottom: 140px;
+  right: 10px;
+  width: 300px;
+  display: none;
+}
+
+.footer-list span {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+
+.footer-list span:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }

@@ -689,8 +689,7 @@
       </div>
     </div>
 
-
-
+    <!-- footer -->
     <div class="footer">
       <div class="footer-wrapper">
         <div class="footer-logo">
@@ -715,14 +714,35 @@
           </div>
         </div>
         <div class="footer-extra">
-          <img src="../../public/client/images/01_main/main_tab_number.png" class="footer-extra-contact-btn">
+          <img id="footer_list_btn" src="../../public/client/images/01_main/main_tab_number.png" class="footer-extra-contact-btn">
           <div class="footer-extra-service">
             <span style="cursor:pointer;">서비스 이용약관 보기</span>
             <br>
             <span style="cursor:pointer;">개인정보 처리 약관 보기</span>
           </div>
+          <div id="footer_list" class="footer-list">
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+            <span>광안 하운드: 000-000-0000</span>
+            <span>나포 하운드 프리미엄 호텔: 000-000-0000</span>
+          </div>
         </div>
+        <script type="text/javascript">
+          $("#footer_list_btn").click(()=>{
+            $("#footer_list").toggle();
+          })
+        </script>
       </div>
     </div>
+
+    <!--  -->
   </body>
 </html>
