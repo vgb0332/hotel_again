@@ -3,13 +3,18 @@
 }
 
 .event-title {
-  display: flex;
   background: black;
   height: 300px;
+  position: relative;
 }
 
 .event-title-img {
   margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .event-main-list-img{
@@ -17,15 +22,20 @@
 }
 
 .event-main {
-  width: 1080px;
+  width: 1200px;
   margin: 50px auto;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-row-gap: 50px;
-  grid-column-gap: 30px;
+  display: table;
 }
 
 .event-main-list {
+  display: inline-table;
+  width: 375px;
+  margin-right: 30px;
+  margin-bottom: 100px;
+}
+
+.event-main-list:nth-child(3n) {
+  margin-right: 0;
 }
 
 .event-main-list-desc {
@@ -34,11 +44,12 @@
 }
 
 .event-more-btn {
-  width: 1080px;
+  width: 1200px;
   margin : auto;
   background: black;
   color: white;
   text-align: center;
   padding: 15px 0;
   margin-bottom: 100px;
+  cursor: pointer;
 }

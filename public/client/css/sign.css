@@ -1,6 +1,6 @@
 body{
     height: 2100px;
-    
+
 }
 .sign_content{
     position: relative;
@@ -10,7 +10,7 @@ body{
 }
 
 .sign_content_wrapper{
-    width: 1080px;    
+    width: 1200px;    
     margin: 0 auto;
 }
 .sign_content_wrapper .sign_title{
@@ -88,7 +88,7 @@ input[type=checkbox] {
     font-size: 14px;
     font-weight: 700;
 }
-.checksection_wrapper #check_blank{  
+.checksection_wrapper #check_blank{
     margin-right: 120px;
 }
 .important_title{
@@ -121,7 +121,3 @@ input[type=checkbox] {
     margin: 80px auto;
     cursor: pointer;
 }
-
-
-
-

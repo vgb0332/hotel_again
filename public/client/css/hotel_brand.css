@@ -7,17 +7,20 @@
   background-position: center 0%;
   background-repeat: no-repeat;
   background-size: 100% 300px;
+  position: relative;
 }
 
-.brand1-logo {
+.brand1-foreground {
   position: absolute;
-  display: flex;
   width: 100%;
-  height: 300px;
-}
-
-.brand1-logo-img {
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   margin: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .brand2 {
@@ -48,37 +51,49 @@
 }
 
 .brand2-list-body {
-  display: flex;
+  display: table;
+  width: 100%;
   padding-top: 30px;
   height: 300px;
 }
 
 .brand2-list-image {
   width: 33%;
+  display: table-cell;
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-size: 100% 300px;
 }
 
 .brand2-list-map {
   width: 33%;
+  display: table-cell;
 }
 
 .brand2-list-info {
   width: 33%;
   position: relative;
+  display: table-cell;
 }
 
 .brand2-list-info-container {
-  display: flex;
+  display: table;
+  width: 100%;
   padding:  0 20px;
   padding-top: 5px;
 }
 
 .brand2-list-info-icon {
   width: 30px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .brand2-list-info-content {
   font-size: 0.8rem;
   font-weight: 300;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .brand2-list-info-desc {
@@ -93,13 +108,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  display: flex;
+  display: table;
 }
 
 .brand2-list-btn {
-  flex: 1;
+  display: table-cell;
+  width: 33%;
   text-align: center;
-  display: block;
   padding: 10px 0;
   background: blue;
   color: white;
@@ -133,10 +148,11 @@
 }
 
 .brand3-logo {
-  display: flex;
+  padding: 20px 0;
 }
 
 .brand3-logo-img {
+  display: block;
   margin: auto;
   width: 100px;
 }
@@ -153,19 +169,20 @@
 }
 
 .brand3-colors {
-  display: flex;
+  display: table;
+  width: 100%;
   text-align: center;
   height: 100px;
 }
 
 .brand3-color {
-  flex: 1;
-  display: flex;
+  display: table-cell;
+  width: 33%;
+  position: relative;
 }
 
 .brand3-color span {
   color: white;
-  align-self: flex-end;
   display: block;
   width: 100%;
   font-size: 0.8rem;
@@ -173,6 +190,9 @@
   letter-spacing: 1px;
   font-weight: 200;
   margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .brand3-color.a {
@@ -201,14 +221,26 @@
 
 .brand3-main-logos {
   margin: 70px 0;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: table;
+  width: 100%;
 }
 
 .brand3-main-logo {
   position: relative;
   height: 400px;
-  display: flex;
+  display: inline-table;
+  width: 49.8%;
+  vertical-align: top;
+}
+
+.brand3-main-logo img {
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
 }
 
 .brand3-main-logo-title {

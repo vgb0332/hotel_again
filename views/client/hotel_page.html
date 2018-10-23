@@ -21,7 +21,7 @@
 
 	</head>
 	<body>
-		<!-- gnb -->
+    <!-- gnb -->
     <div class='gnb-wrapper'>
       <div class="gnb-container">
         <div class="gnb-event">
@@ -37,7 +37,7 @@
           <span> 공지사항 </span>
           <span> 이벤트 </span>
           <span> SHOP </span>
-          <span> <font color="red">로그아웃</font> </span>
+          <span> <font color="red">회원가입</font> </span>
         </div>
       </div>
     </div>
@@ -51,37 +51,33 @@
         </div>
         <div class='search-bar-list'>
 
-          <!-- 검색 -->
-          <div class='section search'>
+          <!-- 호텔 선택 -->
+          <div class='section hotel' style="border-left: 1px solid #888888;">
             <div class='title'>
-              <span> 예약 가능 객실 </span>
-            </div>
-            <div class='content' style="cursor:pointer;">
-              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
-              <span> 검색 </span>
-            </div>
-          </div>
-
-          <!-- 인원수 -->
-          <div class='section count'>
-            <div class='title'>
-              <span> 인원수 </span>
+              <span> HOTEL BRAND </span>
             </div>
             <div class='content'>
-              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
-              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
-              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
+              <div id="target_hotel">
+                <span id="target_hotel_name">호텔 선택</span>
+                <img id="select_hotel" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              </div>
+            </div>
+            <div id="hotel_list" class="hotel-select">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
             </div>
           </div>
 
-          <!-- 인원수 -->
-          <div class='section count'>
+          <!-- 호텔선택 -->
+          <div class='section date'>
             <div class='title'>
               <span> 예약 날짜 </span>
             </div>
-            <div class='content' style="margin-left:30px;padding-top:0px;">
-              <span style="font-size:1rem;display:inline-block;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
-              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" style="margin-bottom:40px;" class="btn-image">
+            <div class='content' >
+              <span style="font-size:1rem;display:inline-block;line-height: 1.2rem;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
+              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" class="btn-image">
               <script type="text/javascript">
                 var nowTemp = new Date();
                 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
@@ -138,44 +134,48 @@
             </div>
           </div>
 
-          <!-- 호텔 선택 -->
-          <div class='section hotel' style="border-left: 1px solid #888888;">
+          <!-- 인원수 -->
+          <div class='section count'>
             <div class='title'>
-              <span> HOTEL BRAND </span>
+              <span> 인원수 </span>
             </div>
             <div class='content'>
-              <div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                호텔 선택
-              </div>
-              <img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:30px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:30px;" class="btn-image">
             </div>
-            <div id="hotel_list" class="hotel-select" style="width:220px;">
-              <span> something 1 </span>
-              <span> something 21 </span>
-              <span> something 31 </span>
-              <span> something 41 </span>
+          </div>
+
+          <!-- 검색 -->
+          <div class='section search'>
+            <div class='title'>
+              <span> 예약 가능 객실 </span>
+            </div>
+            <div class='content' style="cursor:pointer;">
+              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
+              <span> 검색 </span>
             </div>
           </div>
 
           <script type="text/javascript">
-            $("#count_down").click( (e) => {
+            $("#count_down").click( function() {
               var cur_val = Number($("#count_val").val());
               if(cur_val <= 1) return false;
               $("#count_val").val( cur_val - 1 );
             });
 
-            $("#count_up").click( (e) => {
+            $("#count_up").click( function() {
               var cur_val = Number($("#count_val").val());
               $("#count_val").val( cur_val + 1 );
             });
 
-            $("#select_hotel").click( (e) => {
+            $("#select_hotel").click( function() {
               $("#hotel_list").toggle();
             });
 
-            $("#hotel_list span").click( (e) => {
+            $("#hotel_list span").click( function(e) {
               console.log($(e.target).text());
-              $("#target_hotel").text($(e.target).text());
+              $("#target_hotel_name").text($(e.target).text());
               $("#hotel_list").hide();
             });
 
@@ -214,11 +214,16 @@
 				        <p>감각적인 트랜드를 선도하고, 광안리의 바다와 아름다운 광안대교를 한눈에 감상할 수 있으며, 젊고 열정적인 컨텐츠를 경험할 수 있습니다.</p>
 				    </div>
 
-				    <div class="content2_head" id="hotel_service" style="background-image:url('../../public/client/images/06_hotel_page/hotel_service.png');"></div>
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+				    <div class="content2_head" id="hotel_service" >
+              <span> 호텔 구성 서비스 </span>
+            </div>
 				    <div class="service_img" style="background-image:url();"></div>
 
-
-				    <div class="content2_head" id="hotel_guide" style="background-image:url('../../public/client/images/06_hotel_page/hotel_guide.png');"></div>
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+            <div class="content2_head" id="hotel_guide" >
+              <span> 호텔 이용 안내 </span>
+            </div>
 				    <div class="guide_desc">
 		                <div class="guide_desc1">
 				        <p>* 체크인/아웃 시간은 요일별 상이하오니 예약 전 꼭 확인하여주세요.</p>
@@ -233,14 +238,19 @@
 				        </div>
 				    </div>
 
-				    <div class="content2_head" id="hotel_media" style="background-image:url('../../public/client/images/06_hotel_page/hotel_media.png');"></div>
-
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+            <div class="content2_head" id="hotel_media" >
+              <span> 호텔 영상 </span>
+            </div>
 		            <div class="youtubeWrap">
 		              <iframe width="560" height="315" src="https://www.youtube.com/embed/D4Z2nEdzkdc" frameborder="0" allowfullscreen></iframe>
 		            </div>
 
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+				    <div class="content2_head" id="hotel_room" >
+              <span> 객실 정보 </span>
+            </div>
 
-				    <div class="content2_head" id="hotel_room" style="background-image:url('../../public/client/images/06_hotel_page/hotel_room.png');"></div>
 					      <div class="room_section">
 							    <div class="room_list">
 							        <div class="room">
@@ -402,17 +412,23 @@
 									       </div>
 					        	</div>
 					      	</div>
-						<div class="content2_head" id="hotel_call" style="background-image:url('../../public/client/images/06_hotel_page/hotel_call.png');"></div>
-								<div class="call_number">호텔 대표 번호 : +82(0)51.809.0008</div>
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+				    <div class="content2_head" id="hotel_call" >
+              <span> 전화 예약 서비스 </span>
+            </div>
+						<div class="call_number">호텔 대표 번호 : +82(0)51.809.0008</div>
 
 						<!-- map -->
 						<div class="map">
-						<div class="content2_head" id="hotel_map" style="background-image:url('../../public/client/images/06_hotel_page/hotel_map.png');"></div>
-                        <p>지하철 : </p>
-                        <p>버스 : </p>
-                        <p>택시 :</p>
-                        </div>
-                        <div class="map_space"></div>
+            <div class="content2_head" id="hotel_name" style="background-image:url('../../public/client/images/06_hotel_page/hotel_name.png');"></div>
+				    <div class="content2_head" id="hotel_call" >
+              <span> 호텔 찾아가기 </span>
+            </div>
+                <p>지하철 : </p>
+                <p>버스 : </p>
+                <p>택시 :</p>
+                </div>
+                <div class="map_space"></div>
 
 						<!--  -->
                 </div>
@@ -464,7 +480,7 @@
                   </div>
     						</div>
                 <script type="text/javascript">
-                  $("#footer_list_btn").click(()=>{
+                  $("#footer_list_btn").click( function() {
                     $("#footer_list").toggle();
                   })
                 </script>

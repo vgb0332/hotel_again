@@ -3,17 +3,22 @@
 }
 
 .event1-title {
-  display: flex;
   background: black;
   height: 300px;
+  position: relative;
 }
 
 .event1-title-img {
   margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .event2 {
-  width: 1080px;
+  width: 1200px;
   margin: auto;
   border: 1px solid black;
   margin-top : 100px;
@@ -21,20 +26,23 @@
 
 .event2-wrapper {
   padding: 20px 50px;
-  display: flex;
+  display: table;
 }
 
 .event2-img-container {
-  flex: 1;
+  /* display: table-cell; */
+  width: 570px;
 }
 
 .event2-img {
   width: 100%;
+  height: 100%;
 }
 
 .event2-desc-container {
-  flex: 1;
   padding: 0 30px;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .event2-desc-title {

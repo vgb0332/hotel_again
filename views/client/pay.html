@@ -20,171 +20,171 @@
     <title> 더블유 디자인 호텔 MAIN </title>
 	</head>
 	<body>
-		<!-- gnb -->
-		<div class='gnb-wrapper'>
-			<div class="gnb-container">
-				<div class="gnb-event">
-					<span class="event-desc"> <호텔 최저가 예약 이벤트> 총 예약 결제 금액에서 <font color="red">4%</font> 할인 </span>
-					<span>
-						<img src="../../public/client/images/01_main/main_event_search.png" class="gnb-event-btn">
-					</span>
-				</div>
-				<div class='gnb-navbar'>
-					<span class="my_page">강병욱님 / MY PAGE</span>
-					<span class="my_point">포인트 3,000P</span>
-					<span> 호텔정보 </span>
-					<span> 공지사항 </span>
-					<span> 이벤트 </span>
-					<span> SHOP </span>
-					<span> <font color="red">로그아웃</font> </span>
-				</div>
-			</div>
-		</div>
-		<!--    -->
+    <!-- gnb -->
+    <div class='gnb-wrapper'>
+      <div class="gnb-container">
+        <div class="gnb-event">
+          <span class="event-desc"> <호텔 최저가 예약 이벤트> 총 예약 결제 금액에서 <font color="red">4%</font> 할인 </span>
+          <span>
+            <img src="../../public/client/images/01_main/main_event_search.png" class="gnb-event-btn">
+          </span>
+        </div>
+        <div class='gnb-navbar'>
+          <span class="my_page">강병욱님 / MY PAGE</span>
+          <span class="my_point">포인트 3,000P</span>
+          <span> 호텔정보 </span>
+          <span> 공지사항 </span>
+          <span> 이벤트 </span>
+          <span> SHOP </span>
+          <span> <font color="red">회원가입</font> </span>
+        </div>
+      </div>
+    </div>
+    <!--    -->
 
-		<!-- search bar -->
-		<div class='search-bar-wrapper'>
-			<div class='search-bar-container'>
-				<div class="search-bar-logo">
-					<img src="../../public/client/images/01_main/main_bar_logo.png" class="nav-logo">
-				</div>
-				<div class='search-bar-list'>
+    <!-- search bar -->
+    <div class='search-bar-wrapper'>
+      <div class='search-bar-container'>
+        <div class="search-bar-logo">
+          <img src="../../public/client/images/01_main/main_bar_logo.png" class="nav-logo">
+        </div>
+        <div class='search-bar-list'>
 
-					<!-- 검색 -->
-					<div class='section search'>
-						<div class='title'>
-							<span> 예약 가능 객실 </span>
-						</div>
-						<div class='content' style="cursor:pointer;">
-							<img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
-							<span> 검색 </span>
-						</div>
-					</div>
+          <!-- 호텔 선택 -->
+          <div class='section hotel' style="border-left: 1px solid #888888;">
+            <div class='title'>
+              <span> HOTEL BRAND </span>
+            </div>
+            <div class='content'>
+              <div id="target_hotel">
+                <span id="target_hotel_name">호텔 선택</span>
+                <img id="select_hotel" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              </div>
+            </div>
+            <div id="hotel_list" class="hotel-select">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
+            </div>
+          </div>
 
-					<!-- 인원수 -->
-					<div class='section count'>
-						<div class='title'>
-							<span> 인원수 </span>
-						</div>
-						<div class='content'>
-							<img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
-							<input id="count_val" class="input-search" type="number" name="" value="1"></input>
-							<img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
-						</div>
-					</div>
+          <!-- 호텔선택 -->
+          <div class='section date'>
+            <div class='title'>
+              <span> 예약 날짜 </span>
+            </div>
+            <div class='content' >
+              <span style="font-size:1rem;display:inline-block;line-height: 1.2rem;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
+              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" class="btn-image">
+              <script type="text/javascript">
+                var nowTemp = new Date();
+                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                var nowTemp2 = new Date(nowTemp.setDate(nowTemp.getDate()+1));
+                var now2 = new Date(nowTemp2.getFullYear(), nowTemp2.getMonth(), nowTemp2.getDate(), 0, 0, 0, 0);
+                $('#dates').daterangepicker({
+                    "showISOWeekNumbers": true,
+                    "timePicker24Hour": true,
+                    "autoApply": true,
+                    "locale": {
+                        "format": "YYYY-MM-DD",
+                        "separator": "  ~  ",
+                        "applyLabel": "Apply",
+                        "cancelLabel": "Cancel",
+                        "fromLabel": "From",
+                        "toLabel": "To",
+                        "customRangeLabel": "Custom",
+                        "weekLabel": "W",
+                        "daysOfWeek": [
+                            "일",
+                            "월",
+                            "화",
+                            "수",
+                            "목",
+                            "금",
+                            "토"
+                        ],
+                        "monthNames": [
+                            "1월",
+                            "2월",
+                            "3월",
+                            "4월",
+                            "5월",
+                            "6월",
+                            "7월",
+                            "8월",
+                            "9월",
+                            "10월",
+                            "11월",
+                            "12월"
+                        ],
+                        "firstDay": 1
+                    },
+                    "startDate":now,
+                    "endDate": now2,
+                    "minDate": now
+                },
+                function(start, end, label) {
+                  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  $("#startDate").text(start.format('YYYY-MM-DD'));
+                  $("#endDate").text(end.format('YYYY-MM-DD'));
+                });
+              </script>
+            </div>
+          </div>
 
-					<!-- 인원수 -->
-					<div class='section count'>
-						<div class='title'>
-							<span> 예약 날짜 </span>
-						</div>
-						<div class='content' style="margin-left:30px;padding-top:0px;">
-							<span style="font-size:1rem;display:inline-block;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
-							<img id="dates" src="../../public/client/images/01_main/main_bar_02.png" style="margin-bottom:40px;" class="btn-image">
-							<script type="text/javascript">
-								var nowTemp = new Date();
-								var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-								var nowTemp2 = new Date(nowTemp.setDate(nowTemp.getDate()+1));
-								var now2 = new Date(nowTemp2.getFullYear(), nowTemp2.getMonth(), nowTemp2.getDate(), 0, 0, 0, 0);
-								$('#dates').daterangepicker({
-										"showISOWeekNumbers": true,
-										"timePicker24Hour": true,
-										"autoApply": true,
-										"locale": {
-												"format": "YYYY-MM-DD",
-												"separator": "  ~  ",
-												"applyLabel": "Apply",
-												"cancelLabel": "Cancel",
-												"fromLabel": "From",
-												"toLabel": "To",
-												"customRangeLabel": "Custom",
-												"weekLabel": "W",
-												"daysOfWeek": [
-														"일",
-														"월",
-														"화",
-														"수",
-														"목",
-														"금",
-														"토"
-												],
-												"monthNames": [
-														"1월",
-														"2월",
-														"3월",
-														"4월",
-														"5월",
-														"6월",
-														"7월",
-														"8월",
-														"9월",
-														"10월",
-														"11월",
-														"12월"
-												],
-												"firstDay": 1
-										},
-										"startDate":now,
-										"endDate": now2,
-										"minDate": now
-								},
-								function(start, end, label) {
-									console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-									$("#startDate").text(start.format('YYYY-MM-DD'));
-									$("#endDate").text(end.format('YYYY-MM-DD'));
-								});
-							</script>
-						</div>
-					</div>
+          <!-- 인원수 -->
+          <div class='section count'>
+            <div class='title'>
+              <span> 인원수 </span>
+            </div>
+            <div class='content'>
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:30px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:30px;" class="btn-image">
+            </div>
+          </div>
 
-					<!-- 호텔 선택 -->
-					<div class='section hotel' style="border-left: 1px solid #888888;">
-						<div class='title'>
-							<span> HOTEL BRAND </span>
-						</div>
-						<div class='content'>
-							<div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-								호텔 선택
-							</div>
-							<img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
-						</div>
-						<div id="hotel_list" class="hotel-select" style="width:220px;">
-							<span> something 1 </span>
-							<span> something 21 </span>
-							<span> something 31 </span>
-							<span> something 41 </span>
-						</div>
-					</div>
+          <!-- 검색 -->
+          <div class='section search'>
+            <div class='title'>
+              <span> 예약 가능 객실 </span>
+            </div>
+            <div class='content' style="cursor:pointer;">
+              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
+              <span> 검색 </span>
+            </div>
+          </div>
 
-					<script type="text/javascript">
-						$("#count_down").click( (e) => {
-							var cur_val = Number($("#count_val").val());
-							if(cur_val <= 1) return false;
-							$("#count_val").val( cur_val - 1 );
-						});
+          <script type="text/javascript">
+            $("#count_down").click( function() {
+              var cur_val = Number($("#count_val").val());
+              if(cur_val <= 1) return false;
+              $("#count_val").val( cur_val - 1 );
+            });
 
-						$("#count_up").click( (e) => {
-							var cur_val = Number($("#count_val").val());
-							$("#count_val").val( cur_val + 1 );
-						});
+            $("#count_up").click( function() {
+              var cur_val = Number($("#count_val").val());
+              $("#count_val").val( cur_val + 1 );
+            });
 
-						$("#select_hotel").click( (e) => {
-							$("#hotel_list").toggle();
-						});
+            $("#select_hotel").click( function() {
+              $("#hotel_list").toggle();
+            });
 
-						$("#hotel_list span").click( (e) => {
-							console.log($(e.target).text());
-							$("#target_hotel").text($(e.target).text());
-							$("#hotel_list").hide();
-						});
+            $("#hotel_list span").click( function(e) {
+              console.log($(e.target).text());
+              $("#target_hotel_name").text($(e.target).text());
+              $("#hotel_list").hide();
+            });
 
-					</script>
+          </script>
 
-				</div>
-			</div>
-		</div>
+        </div>
+      </div>
+    </div>
 
-		<!--  -->
+    <!--  -->
 		<div class="pay">
 		    <div class="pay_banner">
                 <div class="pay_wrapper">
@@ -208,7 +208,8 @@
                             </div>
                         </div>
                         <div class="pay_text">
-                            <div class="pay_text_head" style="background-image: url('../../public/client/images/08_pay/pay_important.png')"></div>
+                            <div class="extra_head" style="background-image: url('../../public/client/images/08_pay/pay_line.png')"></div>
+                            <p>필수 입력사항</p>
                             <div class="pay_name">
                                 <div class="p_name">예약자명</div>
                                 <input type="text" class="p_input" />
@@ -235,7 +236,8 @@
                             </div>
                         </div>
                         <div class="pay_point">
-                            <div class="pay_text_head" style="background-image: url('../../public/client/images/08_pay/pay_point.png')"></div>
+                            <div class="extra_head" style="background-image: url('../../public/client/images/08_pay/pay_line.png')"></div>
+                            <p> 포인트 / 쿠폰</p>
                             <div class="pay_name">
                                 <div class="p_name" style="text-align: le">포인트 사용</div>
                                 <input type="text" class="p_input" value="0" id="pay_point_input"/>
@@ -256,7 +258,8 @@
                             <div class="pay_usetip">*쿠폰은 유효기간 및 해당 지점에 사용 가능 여부를 확인 하시기 바랍니다.</div>
                         </div>
                         <div class="pay_cancel">
-                            <div class="pay_text_head" style="background-image: url('../../public/client/images//08_pay/pay_cancle.png')"></div>
+                            <div class="extra_head" style="background-image: url('../../public/client/images/08_pay/pay_line.png')"></div>
+                            <p> 취소 환불 규정 / 이용 약관 등</p>
                             <div class="pay_policy">
                                    <div class="policy_wrapper">
                                         <div class="policy_head">취소/환불 규정 보기</div>
@@ -402,7 +405,7 @@
               </div>
 						</div>
             <script type="text/javascript">
-              $("#footer_list_btn").click(()=>{
+              $("#footer_list_btn").click( function() {
                 $("#footer_list").toggle();
               })
             </script>
@@ -425,7 +428,7 @@
 			      }
 			    };
 
-        $(".policy_button").click( (e) => {
+        $(".policy_button").click( function(e) {
 
           if($(e.target).siblings('.policy_text').is(":visible")){
               $(e.target).find('i').addClass('fa-chevron-down').removeClass('fa-chevron-up');

@@ -1,14 +1,13 @@
 .hotel1 {
-
+  width: 1200px;
+  margin: auto;
 }
 
 .hotel1-background {
   height: 200px;
-  background-color: white;
-  display: flex;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 5px solid black;
-  width: 1080px;
-  margin: auto;
 }
 
 .hotel1-logo-img {
@@ -16,26 +15,26 @@
 }
 
 .hotel2 {
-  width: 1080px;
+  width: 1200px;
   margin: auto;
 }
 
 .hotel2-top {
-  padding: 20px 0;
-  padding-left: 10px;
+  padding: 30px 20px;
+  padding-bottom: 40px;
 }
 
 .hotel2-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 .hotel2-address {
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .hotel2-body {
-  display: flex;
+  display: table;
 }
 
 .hotel2-image-container {
@@ -43,35 +42,36 @@
 }
 
 #hotel2 {
-  width: 800px;
+  width: 900px;
 }
 
 #hotel2_prev {
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 0;
   z-index: 2;
   cursor: pointer;
-  display: flex;
-  height: 100%;
-  margin-left: 20px;
+  height: 500px;
   opacity: 0.6;
 }
 
 #hotel2_next {
   position: absolute;
-  right: 0;
+  right: 60px;
   top: 0;
   z-index: 2;
   cursor: pointer;
-  display: flex;
-  height: 100%;
-  margin-right: 20px;
+  height: 500px;
   opacity: 0.6;
 }
 
 .image-ctrl-btn {
+  position: absolute;
   margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 #hotel2_prev:hover{
@@ -111,15 +111,14 @@
 }
 
 .hotel2-preview-container {
-  position: relative;
   height: 100px;
+  width: 100%;
   bottom: 0;
   left: 0;
   background: black;
   z-index: 2;
-  /* width: 100%; */
-  padding: 5px;
-  display: flex;
+  padding: 7px 0;
+  position: relative;
 }
 
 .hotel2-preview {
@@ -130,19 +129,23 @@
 #hotel2_preview_prev {
   z-index: 3;
   cursor: pointer;
-  display: flex;
   height: 100%;
   margin-left: 20px;
   opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #hotel2_preview_next {
   z-index: 3;
   cursor: pointer;
-  display: flex;
   height: 100%;
   margin-right: 20px;
   opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 #hotel2_preview_prev:hover{
@@ -155,28 +158,29 @@
 
 
 .hotel2-info {
-  flex: 1;
-  margin-left: 10px;
-  border-top: 2px solid black;
+  display: table-cell;
+  padding-left: 20px;
+  /* border-top: 2px solid black; */
+  vertical-align: top;
 }
 
 .hotel2-info-list {
-  display: flex;
-  flex-direction: row;
+  display: table;
+  width: 280px;
   padding: 5px 0;
+  border-top: 2px solid black;
 }
 
 .hotel2-info-sub-list {
-  display: flex;
-  flex-direction: row;
-  padding: 5px 0;
+  display: table;
+  padding: 10px 0;
   border-top: 1px solid #d3d3d3;
-  margin-right: 40px;
 }
 
 .hotel2-info-list-icon{
   padding: 0 10px;
   width: 20px;
+  display: table-cell;
 }
 
 .hotel2-info-list-time {
@@ -205,16 +209,21 @@
   /* color: gray; */
 }
 
+.hotel2-info-container {
+  display: table;
+  padding-bottom: 5px;
+}
+
 .hotel3 {
   border-top: 2px solid black;
   margin: 40px auto;
   padding-left: 10px;
-  width: 1080px;
+  width: 1200px;
 }
 
 .hotel3-title {
   padding: 20px 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hotel3-desc {
@@ -226,12 +235,12 @@
   border-top: 2px solid black;
   margin: 40px auto;
   padding-left: 10px;
-  width: 1080px;
+  width: 1200px;
 }
 
 .hotel4-title {
   padding: 20px 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hotel4-desc {
@@ -247,16 +256,17 @@
 }
 
 .hotel5 {
-  width: 1080px;
+  width: 1200px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: table;
 }
 
 .hotel5-list {
   border: 1px solid #d3d3d3;
   margin: 0 30px;
   margin-bottom: 100px;
+  display: inline-table;
+  width: 335px;
 }
 
 .hotel5-list-image {
@@ -269,7 +279,7 @@
 }
 
 .hotel5-list-desc-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 300;
   padding: 10px;
   border-bottom: 1px solid #d3d3d3;
@@ -281,9 +291,9 @@
 }
 
 .hotel5-list-desc-info {
-  display: flex;
+  display: table;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .hotel5-list-desc-icon {
@@ -291,8 +301,8 @@
 }
 
 .hotel5-list-desc-desc {
-  flex: 1;
-  font-weight: 300;
+  display: table-cell;
+  font-weight: 200;
 }
 
 .hotel5-list-desc-price {

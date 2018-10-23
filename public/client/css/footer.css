@@ -1,30 +1,37 @@
 
 .footer {
-  width: 1080px;
+  width: 1200px;
   margin: auto;
   border-top: 1px solid black;
   margin: 20px auto;
 }
 
 .footer-wrapper {
-  display: flex;
+  display: table;
+  width: 100%;
 }
 
 .footer-logo {
-  display:flex;
-  align-items: center;
-  padding: 30px 0;
+  display:table-cell;
+  vertical-align: middle;
+  width: 200px;
+}
+
+.footer-logo img {
+  vertical-align: middle;
 }
 
 .footer-content {
   border-right: 1px solid black;
-  padding: 40px 0;
-  width:900px;
+  display:table-cell;
+  vertical-align: middle;
+  width: 800px;
 }
 
 .footer-content-title {
   font-size:0.9rem;
   line-height:0.8rem;
+  font-weight: 300;
 }
 
 .footer-content-contact {
@@ -33,16 +40,17 @@
 }
 
 .footer-content-company-info {
-  font-size:0.75rem;
+  font-size:0.8rem;
   line-height: 1.3rem;
+  font-weight: 300;
 }
 
 .footer-extra {
   padding: 40px 10px;
   margin: auto 10px;
-  display:flex;
-  flex-direction:column;
+  text-align: center;
   position: relative;
+  vertical-align: middle;
 }
 
 .footer-extra-contact-btn {
@@ -59,8 +67,8 @@
 .footer-list {
   position: absolute;
   background: white;
-  bottom: 140px;
-  right: 10px;
+  bottom: 145px;
+  right: 15px;
   width: 300px;
   display: none;
 }
@@ -73,6 +81,7 @@
   color: white;
   font-size: 0.9rem;
   border: 1px solid transparent;
+  text-align: left;
 }
 
 .footer-list span:hover {

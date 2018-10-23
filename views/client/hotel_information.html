@@ -29,6 +29,8 @@
           </span>
         </div>
         <div class='gnb-navbar'>
+          <span class="my_page">강병욱님 / MY PAGE</span>
+          <span class="my_point">포인트 3,000P</span>
           <span> 호텔정보 </span>
           <span> 공지사항 </span>
           <span> 이벤트 </span>
@@ -47,37 +49,33 @@
         </div>
         <div class='search-bar-list'>
 
-          <!-- 검색 -->
-          <div class='section search'>
+          <!-- 호텔 선택 -->
+          <div class='section hotel' style="border-left: 1px solid #888888;">
             <div class='title'>
-              <span> 예약 가능 객실 </span>
-            </div>
-            <div class='content' style="cursor:pointer;">
-              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
-              <span> 검색 </span>
-            </div>
-          </div>
-
-          <!-- 인원수 -->
-          <div class='section count'>
-            <div class='title'>
-              <span> 인원수 </span>
+              <span> HOTEL BRAND </span>
             </div>
             <div class='content'>
-              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:20px;" class="btn-image">
-              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
-              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:20px;" class="btn-image">
+              <div id="target_hotel">
+                <span id="target_hotel_name">호텔 선택</span>
+                <img id="select_hotel" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              </div>
+            </div>
+            <div id="hotel_list" class="hotel-select">
+              <span> something 1 </span>
+              <span> something 21 </span>
+              <span> something 31 </span>
+              <span> something 41 </span>
             </div>
           </div>
 
-          <!-- 인원수 -->
-          <div class='section count'>
+          <!-- 호텔선택 -->
+          <div class='section date'>
             <div class='title'>
               <span> 예약 날짜 </span>
             </div>
-            <div class='content' style="margin-left:30px;padding-top:0px;">
-              <span style="font-size:1rem;display:inline-block;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
-              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" style="margin-bottom:40px;" class="btn-image">
+            <div class='content' >
+              <span style="font-size:1rem;display:inline-block;line-height: 1.2rem;"> <span id="startDate">2018-09-20 </span> ~ </br> <span id="endDate"> 2018-09-21 </span> </span>
+              <img id="dates" src="../../public/client/images/01_main/main_bar_02.png" class="btn-image">
               <script type="text/javascript">
                 var nowTemp = new Date();
                 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
@@ -134,44 +132,48 @@
             </div>
           </div>
 
-          <!-- 호텔 선택 -->
-          <div class='section hotel' style="border-left: 1px solid #888888;">
+          <!-- 인원수 -->
+          <div class='section count'>
             <div class='title'>
-              <span> HOTEL BRAND </span>
+              <span> 인원수 </span>
             </div>
             <div class='content'>
-              <div id="target_hotel" style="display:inline-block;width:130px;margin-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                호텔 선택
-              </div>
-              <img id="select_hotel" style="margin-bottom: 20px;" src="../../public/client/images/01_main/main_bar_01.png" class="btn-image">
+              <img id="count_down" src="../../public/client/images/01_main/main_bar_03.png" style="margin-right:30px;" class="btn-image">
+              <input id="count_val" class="input-search" type="number" name="" value="1"></input>
+              <img id="count_up" src="../../public/client/images/01_main/main_bar_04.png" style="margin-left:30px;" class="btn-image">
             </div>
-            <div id="hotel_list" class="hotel-select" style="width:220px;">
-              <span> something 1 </span>
-              <span> something 21 </span>
-              <span> something 31 </span>
-              <span> something 41 </span>
+          </div>
+
+          <!-- 검색 -->
+          <div class='section search'>
+            <div class='title'>
+              <span> 예약 가능 객실 </span>
+            </div>
+            <div class='content' style="cursor:pointer;">
+              <img src="../../public/client/images/01_main/main_bar_search.png" class="btn-image">
+              <span> 검색 </span>
             </div>
           </div>
 
           <script type="text/javascript">
-            $("#count_down").click( (e) => {
+            $("#count_down").click( function() {
               var cur_val = Number($("#count_val").val());
               if(cur_val <= 1) return false;
               $("#count_val").val( cur_val - 1 );
             });
 
-            $("#count_up").click( (e) => {
+            $("#count_up").click( function() {
               var cur_val = Number($("#count_val").val());
               $("#count_val").val( cur_val + 1 );
             });
 
-            $("#select_hotel").click( (e) => {
+            $("#select_hotel").click( function() {
               $("#hotel_list").toggle();
             });
 
-            $("#hotel_list span").click( (e) => {
+            $("#hotel_list span").click( function(e) {
               console.log($(e.target).text());
-              $("#target_hotel").text($(e.target).text());
+              $("#target_hotel_name").text($(e.target).text());
               $("#hotel_list").hide();
             });
 
@@ -181,9 +183,10 @@
       </div>
     </div>
 
+    <!--  -->
+
     <div class="hotel1">
-      <div class="hotel1-background">
-        <img src="../../public/client/images/01_main/main_hound.png" class="hotel1-logo-img">
+      <div class="hotel1-background" style="background-image: url('../../public/client/images/01_main/main_hound.png');">
       </div>
     </div>
 
@@ -198,9 +201,9 @@
       </div>
       <div class="hotel2-body">
         <div class="hotel2-image-container">
-          <span id="hotel2_prev">
+          <div id="hotel2_prev">
             <img src="../../public/client/images/03_hotel_information/info_left.png" class="image-ctrl-btn">
-          </span>
+          </div>
 
           <div id="hotel2">
             <div class="hotel2-image" style="background-image: url('../../public/client/images/main_sample1.jpg');">
@@ -238,23 +241,23 @@
             slidesToShow: 7,
           });
 
-          $("#hotel2_prev").click( (e) => {
+          $("#hotel2_prev").click( function() {
             $("#hotel2").slick('slickPrev');
           });
 
-          $("#hotel2_next").click( (e) => {
+          $("#hotel2_next").click( function() {
             $("#hotel2").slick('slickNext');
           });
 
-          $("#hotel2_preview_prev").click( (e) => {
+          $("#hotel2_preview_prev").click( function() {
             $("#hotel2_preview").slick('slickPrev');
           });
 
-          $("#hotel2_preview_next").click( (e) => {
+          $("#hotel2_preview_next").click( function() {
             $("#hotel2_preview").slick('slickNext');
           });
 
-          $(".hotel2-preview-image").click( (e) => {
+          $(".hotel2-preview-image").click( function(e) {
             e.preventDefault();
             var index = $(e.target).attr('data-slick-index');
             $("#hotel2").slick('slickGoTo', parseInt(index));
@@ -267,8 +270,8 @@
               <img src="../../public/client/images/03_hotel_information/info_01_clock.png">
             </div>
             <div class="hotel2-info-list-time">
-              <div class="">체크인&nbsp;&nbsp;&nbsp;&nbsp; : 16:00 </div>
-              <div class="">체크아웃&nbsp; : ~12:00 </div>
+              <div class=""><span style="text-align:left; width: 70px; display:inline-block;">체크인</span> : 16:00 </div>
+              <div class=""><span style="text-align:left; width: 70px; display:inline-block;">체크아웃 </span> : ~12:00 </div>
             </div>
 
           </div>
@@ -302,19 +305,19 @@
 
           <div class="hotel2-info-sub-list">
             <div class="hotel2-info-list-contact">
-              <div class="" style="display:flex;">
+              <div class="hotel2-info-container">
                 <div class="hotel2-info-list-icon">
                   <img style="margin:auto;" src="../../public/client/images/03_hotel_information/info_05_mail.png">
                 </div>
                 <div class="">number25@naver.com</div>
               </div>
-              <div class="" style="display:flex;">
+              <div class="hotel2-info-container">
                 <div class="hotel2-info-list-icon">
                   <img src="../../public/client/images/03_hotel_information/info_06_phone.png">
                 </div>
                 <div class="">000-0000-0000</div>
               </div>
-              <div class="" style="display:flex;">
+              <div class="hotel2-info-container">
                 <div class="hotel2-info-list-icon">
                   <img src="../../public/client/images/03_hotel_information/info_07_fax.png">
                 </div>
@@ -736,7 +739,7 @@
           </div>
         </div>
         <script type="text/javascript">
-          $("#footer_list_btn").click(()=>{
+          $("#footer_list_btn").click( function() {
             $("#footer_list").toggle();
           })
         </script>
