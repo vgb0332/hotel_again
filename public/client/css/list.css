@@ -100,6 +100,12 @@
   margin-bottom: 100px;
   display: inline-table;
   width: 430px;
+  vertical-align: top;
+}
+
+.list2-right-list-image-wrapper {
+  overflow: hidden;
+  position: relative;
 }
 
 .list2-right-list-image{
@@ -107,11 +113,15 @@
   background-position: center 0%;
   background-repeat: no-repeat;
   background-size: 100% 300px;
-  display: flex;
   position: relative;
 }
 
-.list2-right-list-image .list-price-container {
+.list2-right-list-image-wrapper:hover .list2-right-list-image {
+  transform: scale(1.2);
+  transition: all .5s;
+}
+
+.list2-right-list-image-wrapper .list-price-container {
   right: 0;
   position: absolute;
   bottom: 0;
@@ -120,7 +130,7 @@
   padding-bottom: 10px;
 }
 
-.list2-right-list-image .list-fake-price {
+.list2-right-list-image-wrapper .list-fake-price {
   color: white;
   font-size: 0.9rem;
   display: block;
@@ -128,7 +138,7 @@
   line-height: 1rem;
 }
 
-.list2-right-list-image .list-real-price {
+.list2-right-list-image-wrapper .list-real-price {
   color: white;
   font-size: 1.2rem;
   display: block;

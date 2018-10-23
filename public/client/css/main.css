@@ -229,6 +229,9 @@
   display: table;
   width: 100%;
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main5-view-image {
@@ -237,9 +240,24 @@
   top: 0;
   left: 0;
   width: 100%;
+  margin: auto;
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.main5-list-image-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.main5-list-image-wrapper:hover .main5-list-image {
+  transform: scale(1.2);
+  transition: all .5s;
+}
+
+.main5-view-image {
+  transition: none;
 }
 
 .main5-list-address {
